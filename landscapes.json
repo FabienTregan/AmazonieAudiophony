@@ -1,17 +1,87 @@
 {
     "paysage1": {
-        "img": "hamster1.png"
+        "img": "image1.png",
+        "animals": {
+            "lapin": {
+                "img": "image1.png",
+                "sound": "sound1.mp3"
+            },
+            "chat": {
+                "img": "image1.png",
+                "sound": "sound2.mp3"
+            },
+            "chien": {
+                "img": "image2.png",
+                "sound": "sound3.mp3"
+            }
+        }
     },
     "paysage2": {
-        "img": "hamster1.png"
+        "img": "image1.png",
+        "animals": {
+            "lapin": {
+                "img": "image1.png",
+                "sound": "sound1.mp3"
+            },
+            "chat": {
+                "img": "image1.png",
+                "sound": "sound1.mp3"
+            },
+            "chien": {
+                "img": "image1.png",
+                "sound": "sound1.mp3"
+            }
+        }
     },
     "paysage3": {
-        "img": "hamster1.png"
+        "img": "image1.png",
+        "animals": {
+            "lapin": {
+                "img": "image1.png",
+                "sound": "sound1.mp3"
+            },
+            "chat": {
+                "img": "image1.png",
+                "sound": "sound1.mp3"
+            },
+            "chien": {
+                "img": "image1.png",
+                "sound": "sound1.mp3"
+            }
+        }
     },
     "paysage4": {
-        "img": "hamster2.png"
+        "img": "image2.png",
+        "animals": {
+            "lapin": {
+                "img": "image1.png",
+                "sound": "sound1.mp3"
+            },
+            "chat": {
+                "img": "image1.png",
+                "sound": "sound1.mp3"
+            },
+            "chien": {
+                "img": "image1.png",
+                "sound": "sound1.mp3"
+            }
+        }
     },
     "paysage5": {
-        "img": "hamster2.png"
+        "img": "image2.png",
+        "animals": {
+            "lapin": {
+                "img": "image1.png",
+                "sound": "sound1.mp3"
+            },
+            "chat": {
+                "img": "image1.png",
+                "sound": "sound1.mp3"
+            },
+            "chien": {
+                "img": "image1.png",
+                "sound": "sound1.mp3"
+            }
+        }
     }
 }

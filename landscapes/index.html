@@ -13,6 +13,7 @@
         @import '../lib/popup.css';
         @import '../lib/wideScreen.css';
         @import '../lib/clickArea.css';
+        @import 'range.css';
 
         @font-face {
             font-family: 'Sansita Bold';
@@ -133,7 +134,7 @@
 
         function populatePage(landscapes) {
 
-            var landscapesNode
+            var line
             const firstLine = document.getElementById("firstLine")
             const secondLine = document.getElementById("secondLine")
 
@@ -143,9 +144,9 @@
                 var landscapeId = keys[i]
 
                 if (even) {
-                    landscapesNode = firstLine
+                    line = firstLine
                 } else {
-                    landscapesNode = secondLine
+                    line = secondLine
                 }
                 even = !even
 
@@ -155,27 +156,12 @@
                 var anchor = document.createElement("a")
                 anchor.appendChild(img)
                 anchor.classList.add("landscape")
-                anchor.href = "../landscape/"
+                anchor.href = "../landscape/?landscapeId=" + landscapeId
 
-                landscapesNode.appendChild(anchor)
+                line.appendChild(anchor)
             }
 
         }
-
-        function getParameter(paramName) {
-            var url = window.location.href;
-            var paramWithEgal = paramName + '='
-            var paramStart = url.search(paramWithEgal) + paramWithEgal.length
-            url = url.substring(paramStart)
-            var paramEnd = url.search('&')
-
-            var param = paramEnd > 0 ?
-                url.substring(0, paramEnd)
-                : url
-
-            return decodeURIComponent(param)
-        }
-
 
     </script>
 </body>

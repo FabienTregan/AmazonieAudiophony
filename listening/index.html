@@ -14,6 +14,8 @@
         @import '../lib/wideScreen.css';
         @import '../lib/clickArea.css';
 
+        @import 'slider/slider.css';
+
         @font-face {
             font-family: 'Sansita Bold';
             src: url('../font/Sansita-Bold.otf') format('woff');
@@ -46,8 +48,8 @@
             height: auto;
         }
 
-        #firstLine,
-        #secondLine {
+        #animals {
+            top: 24%;
             position: absolute;
             display: flex;
             flex-wrap: wrap;
@@ -58,37 +60,18 @@
             height: 20.37%;
         }
 
-        #firstLine {
-            top: 24%;
-        }
-
-        #secondLine {
+        #player {
+            position: absolute;
             top: 48%;
+            height: 10%;
+            width: 100%;
         }
 
         .animal {
-            position: relative;
             width: auto;
             height: 100%;
             margin-left: 1.04%;
             margin-right: 1.04%;
-        }
-
-        .animalImage {
-            width: auto;
-            height: 100%;
-            cursor: pointer;
-            border-radius: 40%;
-        }
-
-        .info {
-            position: absolute;
-            bottom: -5%;
-            right: -5%;
-            width: 20%;
-            height: 20%;
-            cursor: pointer;
-            border-radius: 40%;
         }
 
         .title,
@@ -117,6 +100,45 @@
             outline: aqua;
             border: pink;
         }
+
+        input[type=range] {
+            position: absolute;
+            left: 10%;
+            top: 60%;
+            height: 5%;
+            width: 80%;
+        }
+
+        #glasspane {
+            display: none;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-color: transparent;
+        }
+
+        #glasspane.shown {
+            display: block;
+        }
+
+        #play {
+            left: -500%;
+        }
+
+        #play + label {
+            position: absolute;
+            left: 5%;
+            bottom: 7%;
+            background-image: url(play.png);
+            background-size: 100% 100%; 
+            height: 7.22%;
+            width: 2.81%;
+        }
+
+        #play:checked + label {
+            background-image: url(pause.png);
+        }
+        
     </style>
 </head>
 
@@ -131,20 +153,29 @@
 
         <img class="home" src="../home.png">
 
-        <div id="firstLine" class="animals"></div>
-        <div id="secondLine" class="animals"></div>
+        <div id="animals"></div>
+
+
+
+        <div id="player">
+
+            <div id="placeholders"></div>
+
+        </div>
+
+        <div id="slider" onmousedown="startSlide(event)">
+            <img id="thumb" src="slider/thumb.png">
+        </div>
+        <div id="glasspane" onmouseup="endSlide(event)" onmousemove="slide(event)"></div>
 
         <div class="rules">
             Choisissez un paysage
         </div>
 
+        <input id="play" type="checkbox"><label for="play"></label>
+
     </div>
 
-    <div id="popups" class="wideScreen">
-        <div class="popup fiche" onclick="popup_hide()">
-            plop
-        </div>
-    </div>
 
     <script>
         "use strict";
@@ -153,42 +184,52 @@
 
         function populatePage(landscapes) {
 
-            const firstLine = document.getElementById("firstLine")
-            const secondLine = document.getElementById("secondLine")
-
             const landscapeId = getParameter("landscapeId")
             const landscape = landscapes[landscapeId]
 
-            var even = true
-            const keys = Object.keys(landscape.animals)
+            console.log(landscape)
+
+            populateAnimals(landscape.animals)
+
+        }
+
+        function startSlide(e) {
+            document.getElementById("glasspane").classList.add("shown")
+            slide(e)
+        }
+
+        function endSlide(e) {
+            document.getElementById("glasspane").classList.remove("shown")
+        }
+
+        function slide(e) {
+            var slider = document.getElementById("slider")
+            var sliderClientRect = slider.getClientRects()[0]
+
+            var value = ((e.clientX - sliderClientRect.left) / slider.offsetWidth * 100)
+            value = Math.max(0, value)
+            value = Math.min(100, value)
+
+            var thumb = document.getElementById("thumb")
+            var left = value + "%"
+            thumb.style.left = left
+        }
+
+        function populateAnimals(animals) {
+
+            var animalsNode = document.getElementById("animals")
+
+            var keys = Object.keys(animals)
             for (var i in keys) {
                 var animalId = keys[i]
-                var animal = landscape.animals[animalId]
 
-                var line
-                if (even) {
-                    line = firstLine
-                } else {
-                    line = secondLine
-                }
-                even = !even
+                console.log(animalId)
 
-                var animalImage = document.createElement("img")
-                animalImage.classList.add("animalImage")
-                animalImage.src = animal.img
-                animalImage.addEventListener("click", play(animal.sound))
+                var img = document.createElement("img")
+                img.src = animals[animalId].img
+                img.classList.add("animal")
 
-                var infoImage = document.createElement("img")
-                infoImage.classList.add("info")
-                infoImage.src = "i.png"
-                infoImage.addEventListener("click", showInfos)
-
-                var animalDiv = document.createElement("div")
-                animalDiv.classList.add("animal")
-                animalDiv.appendChild(animalImage)
-                animalDiv.appendChild(infoImage)
-
-                line.appendChild(animalDiv)
+                animalsNode.appendChild(img)
             }
 
         }
@@ -205,22 +246,6 @@
                 : url
 
             return decodeURIComponent(param)
-        }
-
-        function play(file) {
-            var playing = false
-            return function () {
-                if (!playing) {
-                    playing = true;
-                    var audio = new Audio(file)
-                    audio.addEventListener("ended", function () { playing = false })
-                    audio.play()
-                }
-            }
-        }
-
-        function showInfos() {
-            popup_show()
         }
 
 
