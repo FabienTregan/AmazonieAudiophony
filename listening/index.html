@@ -125,20 +125,23 @@
             left: -500%;
         }
 
-        #play + label {
+        #play+label {
             position: absolute;
             left: 5%;
             bottom: 7%;
             background-image: url(play.png);
-            background-size: 100% 100%; 
+            background-size: 100% 100%;
             height: 7.22%;
             width: 2.81%;
         }
 
-        #play:checked + label {
+        #play:checked+label {
             background-image: url(pause.png);
         }
-        
+
+        #audio {
+            display: none;
+        }
     </style>
 </head>
 
@@ -155,12 +158,8 @@
 
         <div id="animals"></div>
 
-
-
         <div id="player">
-
             <div id="placeholders"></div>
-
         </div>
 
         <div id="slider" onmousedown="startSlide(event)">
@@ -172,13 +171,18 @@
             Choisissez un paysage
         </div>
 
-        <input id="play" type="checkbox"><label for="play"></label>
+        <input id="play" type="checkbox" onchange="pausePlay(event)"><label for="play"></label>
 
     </div>
 
 
     <script>
         "use strict";
+
+        var audio
+
+        var requestedTime
+        var sliding = false
 
         landscapes.read("../landscapes.json", populatePage)
 
@@ -187,32 +191,54 @@
             const landscapeId = getParameter("landscapeId")
             const landscape = landscapes[landscapeId]
 
-            console.log(landscape)
-
             populateAnimals(landscape.animals)
+            populateAudio(landscape.sound)
 
         }
 
+        function pausePlay(e) {
+
+            if (event.target.checked) {
+                audio.play()
+            } else {
+                audio.pause()
+            }
+        }
+
+        function timeUpdated(e) {
+
+            if(!sliding) {
+                var thumb = document.getElementById("thumb")
+
+                thumb.style.left = (audio.currentTime * 100 / audio.duration) + "%"
+            }
+        }
+
         function startSlide(e) {
+            sliding = true
             document.getElementById("glasspane").classList.add("shown")
             slide(e)
         }
 
         function endSlide(e) {
             document.getElementById("glasspane").classList.remove("shown")
+            audio.currentTime = requestedTime
+            sliding = false
         }
 
         function slide(e) {
             var slider = document.getElementById("slider")
             var sliderClientRect = slider.getClientRects()[0]
 
-            var value = ((e.clientX - sliderClientRect.left) / slider.offsetWidth * 100)
+            var value = (e.clientX - sliderClientRect.left) / slider.offsetWidth
             value = Math.max(0, value)
-            value = Math.min(100, value)
+            value = Math.min(1, value)
 
             var thumb = document.getElementById("thumb")
-            var left = value + "%"
+            var left = (value * 100) + "%"
             thumb.style.left = left
+
+            requestedTime = audio.duration * value
         }
 
         function populateAnimals(animals) {
@@ -232,6 +258,11 @@
                 animalsNode.appendChild(img)
             }
 
+        }
+
+        function populateAudio(sound) {
+            audio = new Audio('sounds/' + sound)
+            audio.addEventListener("timeupdate", timeUpdated)
         }
 
         function getParameter(paramName) {

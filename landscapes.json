@@ -1,6 +1,7 @@
 {
     "paysage1": {
         "img": "image1.png",
+        "sound": "P1_Paysage_2mn30.wav",
         "animals": {
             "lapin": {
                 "img": "image1.png",
