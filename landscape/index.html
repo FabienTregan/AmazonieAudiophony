@@ -41,7 +41,7 @@
             position: absolute;
             cursor: pointer;
             left: 2.08%;
-            top: 3.70%;
+            top: 5%;
             width: 4.64%;
             height: auto;
         }
@@ -101,7 +101,8 @@
             height: 92.87%;
         }
 
-        .title,
+        #title,
+        #subtitle,
         .rules {
             position: absolute;
             left: 0;
@@ -109,10 +110,16 @@
             text-align: center;
         }
 
-        .title {
+        #title {
             font-family: 'Sansita Bold';
-            font-size: 1.5em;
-            top: 5.37%;
+            font-size: 1.35em;
+            top: 4%;
+        }
+
+        #subtitle {
+            font-family: 'Sansita Bold';
+            font-size: 0.8em;
+            top: 11%;
         }
 
         .rules {
@@ -139,7 +146,7 @@
 
         .next {
             position: absolute;
-            left:  88.85%;
+            left: 88.85%;
             top: 81.48%;
             width: auto;
             height: 12.87%;
@@ -153,9 +160,9 @@
     <div id="main" class="wideScreen">
         <img class="background" src="../background.png" />
 
-        <div class="title">
-            Paysages Sonores
-        </div>
+        <div id="title">TITRE</div>
+
+        <div id="subtitle">sous-titre</div>
 
         <img class="home" src="../home.png">
 
@@ -168,7 +175,7 @@
 
         <div id="popups">
             <div class="popup fiche" onclick="popup_hide()">
-                <div class="title">NOM DU TRUC QUI FAIT LE SON</div>
+                <div xid="title">NOM DU TRUC QUI FAIT LE SON</div>
                 <img id="picto" src="picto1.png">
             </div>
 
@@ -185,17 +192,27 @@
 
         function populatePage(landscapes) {
 
-            const firstLine = document.getElementById("firstLine")
-            const secondLine = document.getElementById("secondLine")
-
             landscapeId = getParameter("landscapeId")
             const landscape = landscapes[landscapeId]
 
+            populateTitle(landscape)
+            populateAnimals(landscape.animals)
+        }
+
+        function populateTitle(landscape) {
+            document.getElementById("title").innerHTML = landscape.title
+            document.getElementById("subtitle").innerHTML = landscape.subtitle
+        }
+
+        function populateAnimals(animals) {
+            const firstLine = document.getElementById("firstLine")
+            const secondLine = document.getElementById("secondLine")
+
             var even = true
-            const keys = Object.keys(landscape.animals)
+            const keys = Object.keys(animals)
             for (var i in keys) {
                 var animalId = keys[i]
-                var animal = landscape.animals[animalId]
+                var animal = animals[animalId]
 
                 var line
                 if (even) {

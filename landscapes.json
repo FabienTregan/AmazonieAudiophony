@@ -1,5 +1,7 @@
 {
     "paysage1": {
+        "title": "PAYSAGE SONORE DE GUYANE",
+        "subtitle": "Levé du jour pluvieux au carbet de Saint-Elie",
         "img": "image1.png",
         "sound": "P1_Paysage_2mn30.mp3",
         "animals": {
@@ -21,6 +23,8 @@
         }
     },
     "paysage2": {
+        "title": "PAYSAGE SONORE DE GUYANE",
+        "subtitle": "Sous-bois de jour",
         "img": "image1.png",
         "animals": {
             "lapin": {
@@ -38,6 +42,8 @@
         }
     },
     "paysage3": {
+        "title": "PAYSAGE SONORE DE GUYANE",
+        "subtitle": "Sous-bois à la tombée du jour",
         "img": "image1.png",
         "animals": {
             "lapin": {
@@ -55,6 +61,8 @@
         }
     },
     "paysage4": {
+        "title": "PAYSAGE SONORE DE GUYANE",
+        "subtitle": "De nuit, premières pluies en forêt après une longue saison sèche",
         "img": "image2.png",
         "animals": {
             "lapin": {
@@ -72,6 +80,8 @@
         }
     },
     "paysage5": {
+        "title": "PAYSAGE SONORE DE GUYANE",
+        "subtitle": "Forêt de nuit",
         "img": "image2.png",
         "animals": {
             "lapin": {
