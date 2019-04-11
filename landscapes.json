@@ -1,19 +1,22 @@
 {
     "paysage1": {
         "img": "image1.png",
-        "sound": "P1_Paysage_2mn30.wav",
+        "sound": "P1_Paysage_2mn30.mp3",
         "animals": {
             "lapin": {
                 "img": "image1.png",
-                "sound": "sound1.mp3"
+                "sound": "sound1.mp3",
+                "slots": [10, 100] 
             },
             "chat": {
                 "img": "image1.png",
-                "sound": "sound2.mp3"
+                "sound": "sound2.mp3",
+                "slots": [0,30] 
             },
             "chien": {
                 "img": "image2.png",
-                "sound": "sound3.mp3"
+                "sound": "sound3.mp3",
+                "slots": [70, 150.121396] 
             }
         }
     },

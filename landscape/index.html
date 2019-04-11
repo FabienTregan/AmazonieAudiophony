@@ -91,6 +91,16 @@
             border-radius: 40%;
         }
 
+        .popup.fiche {
+            position: absolute;
+
+            background-image: url("popup.png");
+            background-size: 100% 100%;
+
+            width: 48.18%;
+            height: 92.87%;
+        }
+
         .title,
         .rules {
             position: absolute;
@@ -117,6 +127,24 @@
             outline: aqua;
             border: pink;
         }
+
+        #picto {
+            position: absolute;
+            left: 50%;
+            top: 20.2%;
+            width: 43.24%;
+            height: 39.88%;
+            transform: translateX(-50%);
+        }
+
+        .next {
+            position: absolute;
+            left:  88.85%;
+            top: 81.48%;
+            width: auto;
+            height: 12.87%;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -134,20 +162,24 @@
         <div id="firstLine" class="animals"></div>
         <div id="secondLine" class="animals"></div>
 
-        <div class="rules">
-            Choisissez un paysage
+        <div class="rules">Familiarisez vous avec les animaux.</div>
+
+        <img src="next.png" class="next" onclick="window.location.href='../listening/?landscapeId=' + landscapeId">
+
+        <div id="popups">
+            <div class="popup fiche" onclick="popup_hide()">
+                <div class="title">NOM DU TRUC QUI FAIT LE SON</div>
+                <img id="picto" src="picto1.png">
+            </div>
+
         </div>
 
-    </div>
-
-    <div id="popups" class="wideScreen">
-        <div class="popup fiche" onclick="popup_hide()">
-            plop
-        </div>
     </div>
 
     <script>
         "use strict";
+
+        var landscapeId
 
         landscapes.read("../landscapes.json", populatePage)
 
@@ -156,7 +188,7 @@
             const firstLine = document.getElementById("firstLine")
             const secondLine = document.getElementById("secondLine")
 
-            const landscapeId = getParameter("landscapeId")
+            landscapeId = getParameter("landscapeId")
             const landscape = landscapes[landscapeId]
 
             var even = true
@@ -223,6 +255,10 @@
             popup_show()
         }
 
+        document.body.addEventListener('dragstart', preventDefault)
+        function preventDefault(e) {
+            e.preventDefault()
+        }
 
     </script>
 </body>

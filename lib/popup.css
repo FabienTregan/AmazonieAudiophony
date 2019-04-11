@@ -10,8 +10,6 @@
     justify-content: center;
     flex-direction: column;
 
-    background: rgba(72, 63, 105, 0.93);
-
     display: none;
 }
 
@@ -23,7 +21,4 @@
 .popup {
     height: 85.1852vh;
     width: 66.6667vh;
-
-    background-image: url("popup_background.jpg");
-    background-size: cover;
 }

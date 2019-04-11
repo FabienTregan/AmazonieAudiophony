@@ -6,7 +6,6 @@
 
     <style>
         @import 'lib/wideScreen.css';
-        @import 'lib/clickArea.css';
 
         @font-face {
             font-family: 'Source Sans';
@@ -16,11 +15,13 @@
         body {
             font-family: 'Source Sans';
             color: white;
+            background-color: black;
         }
 
         #main img {
             height: 100%;
             width: 100%;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -28,11 +29,7 @@
 <body oncontextmenu='event.preventDefault()'>
 
     <div id="main" class="wideScreen">
-        <img src="index.jpg" />
-
-        <div class="clickArea" style="top: 70%; left: 46%; width: 8.1%; height: 7.5%;"
-            onclick="window.location.href='./landscapes'"></div>
-
+        <img src="index.png" onclick="window.location.href='./landscapes'" />
     </div>
 
 </body>
