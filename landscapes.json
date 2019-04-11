@@ -2,7 +2,7 @@
     "paysage1": {
         "title": "PAYSAGE SONORE DE GUYANE",
         "subtitle": "Levé du jour pluvieux au carbet de Saint-Elie",
-        "img": "image1.png",
+        "img": "p1.png",
         "sound": "P1_Paysage_2mn30.mp3",
         "animals": {
             "lapin": {
@@ -22,48 +22,29 @@
             }
         }
     },
-    "paysage2": {
-        "title": "PAYSAGE SONORE DE GUYANE",
-        "subtitle": "Sous-bois de jour",
-        "img": "image1.png",
-        "animals": {
-            "lapin": {
-                "img": "image1.png",
-                "sound": "sound1.mp3"
-            },
-            "chat": {
-                "img": "image1.png",
-                "sound": "sound1.mp3"
-            },
-            "chien": {
-                "img": "image1.png",
-                "sound": "sound1.mp3"
-            }
-        }
-    },
-    "paysage3": {
-        "title": "PAYSAGE SONORE DE GUYANE",
-        "subtitle": "Sous-bois à la tombée du jour",
-        "img": "image1.png",
-        "animals": {
-            "lapin": {
-                "img": "image1.png",
-                "sound": "sound1.mp3"
-            },
-            "chat": {
-                "img": "image1.png",
-                "sound": "sound1.mp3"
-            },
-            "chien": {
-                "img": "image1.png",
-                "sound": "sound1.mp3"
-            }
-        }
-    },
     "paysage4": {
         "title": "PAYSAGE SONORE DE GUYANE",
         "subtitle": "De nuit, premières pluies en forêt après une longue saison sèche",
-        "img": "image2.png",
+        "img": "p4.png",
+        "animals": {
+            "lapin": {
+                "img": "image1.png",
+                "sound": "sound1.mp3"
+            },
+            "chat": {
+                "img": "image1.png",
+                "sound": "sound1.mp3"
+            },
+            "chien": {
+                "img": "image1.png",
+                "sound": "sound1.mp3"
+            }
+        }
+    },
+    "paysage2": {
+        "title": "PAYSAGE SONORE DE GUYANE",
+        "subtitle": "Sous-bois de jour",
+        "img": "p2.png",
         "animals": {
             "lapin": {
                 "img": "image1.png",
@@ -82,7 +63,26 @@
     "paysage5": {
         "title": "PAYSAGE SONORE DE GUYANE",
         "subtitle": "Forêt de nuit",
-        "img": "image2.png",
+        "img": "p5.png",
+        "animals": {
+            "lapin": {
+                "img": "image1.png",
+                "sound": "sound1.mp3"
+            },
+            "chat": {
+                "img": "image1.png",
+                "sound": "sound1.mp3"
+            },
+            "chien": {
+                "img": "image1.png",
+                "sound": "sound1.mp3"
+            }
+        }
+    },
+    "paysage3": {
+        "title": "PAYSAGE SONORE DE GUYANE",
+        "subtitle": "Sous-bois à la tombée du jour",
+        "img": "p3.png",
         "animals": {
             "lapin": {
                 "img": "image1.png",
