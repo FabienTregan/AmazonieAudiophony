@@ -24,6 +24,11 @@
             src: url('../font/Sansita-Medium.otf') format('woff');
         }
 
+        @font-face {
+            font-family: 'Sansita';
+            src: url('../font/Sansita-Regular.otf') format('woff');
+        }
+
         body {
             color: white;
             background-color: black;
@@ -91,6 +96,10 @@
             border-radius: 40%;
         }
 
+        #popups {
+            background-color: rgba(0, 0, 0, 0.75);
+        }
+
         .popup.fiche {
             position: absolute;
 
@@ -99,6 +108,29 @@
 
             width: 48.18%;
             height: 92.87%;
+        }
+
+        #names,
+        #infos {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+        }
+
+        #names {
+            font-family: Sansita Bold;
+            top: 2.5%;
+        }
+
+        #names::first-line {
+            font-size: 1.35em;
+            line-height: 1.5em;
+        }
+
+        #infos {
+            font-family: Sansita;
+            top: 81.5%;
+            line-height: 1.3em;
         }
 
         #title,
@@ -138,7 +170,7 @@
         #picto {
             position: absolute;
             left: 50%;
-            top: 20.2%;
+            top: 25%;
             width: 43.24%;
             height: 39.88%;
             transform: translateX(-50%);
@@ -174,9 +206,19 @@
         <img src="next.png" class="next" onclick="window.location.href='../listening/?landscapeId=' + landscapeId">
 
         <div id="popups">
-            <div class="popup fiche" onclick="popup_hide()">
-                <div xid="title">NOM DU TRUC QUI FAIT LE SON</div>
+            <div class="popup fiche">
+                <div class="clickArea" style="left: 87%; top: 4%; width: 7.5%; height: 7.5%; " onclick="popup_hide()">
+                </div>
+
+                <div id="names"></div>
+
                 <img id="picto" src="picto1.png">
+
+                <div id="popupplay" class="clickArea" style="left: 45%; top: 69%; width: 9.5%; height: 9.5%; ">
+                </div>
+
+                <div id="infos"></div>
+
             </div>
 
         </div>
@@ -230,7 +272,7 @@
                 var infoImage = document.createElement("img")
                 infoImage.classList.add("info")
                 infoImage.src = "i.png"
-                infoImage.addEventListener("click", showInfos)
+                infoImage.addEventListener("click", showInfos(animal))
 
                 var animalDiv = document.createElement("div")
                 animalDiv.classList.add("animal")
@@ -268,8 +310,27 @@
             }
         }
 
-        function showInfos() {
-            popup_show()
+        function showInfos(animal) {
+            return function () {
+
+                var picto = document.getElementById("picto")
+                picto.src = animal.largeImg
+
+                var popupplay = document.getElementById("popupplay")
+                var popupplayclone = popupplay.cloneNode()
+                var parentNode = popupplay.parentNode
+                popupplayclone.addEventListener("click", play(animal.sound))
+                parentNode.removeChild(popupplay)
+                parentNode.appendChild(popupplayclone)
+
+                var names = document.getElementById("names")
+                names.innerHTML = animal.names
+
+                var infos = document.getElementById("infos")
+                infos.innerHTML = animal.infos
+
+                popup_show()
+            }
         }
 
         document.body.addEventListener('dragstart', preventDefault)
