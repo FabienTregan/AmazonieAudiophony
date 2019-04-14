@@ -6,6 +6,7 @@
 
     <script src="../lib/wideScreen.js"></script>
     <script src="../lib/popup.js"></script>
+    <script src="../lib/DragDropTouch.js"></script>
 
     <script src="../landscapes.js"></script>
 
@@ -70,13 +71,19 @@
         #slots {
             top: 48%;
             height: 30%;
+            height: 20.37%;
         }
 
-        .slot {
+        .slot,
+        .string {
             position: absolute;
             transform: translateX(-50%);
             width: auto;
             height: 100%;
+        }
+
+        .string {
+            transform: translate(-50%, 100%);
         }
 
         #slider {
@@ -94,7 +101,7 @@
             margin-right: 1.04%;
         }
 
-        .animal img{
+        .animal img {
             width: auto;
             height: 100%;
         }
@@ -180,13 +187,30 @@
             width: 100%;
         }
 
-        .next {
+        #next {
             position: absolute;
             left: 88.85%;
             top: 81.48%;
             width: auto;
             height: 12.87%;
             cursor: pointer;
+            animation: bumping 0.75s ease-in-out infinite alternate;
+        }
+
+        @keyframes bumping {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1.1);
+            }
+        }
+
+        #next.disabled {
+            opacity: 0.4;
+            cursor: default;
+            animation: none;
         }
     </style>
 </head>
@@ -215,7 +239,7 @@
 
         <input id="play" type="checkbox" onchange="pausePlay(event)"><label for="play"></label>
 
-        <img src="next.png" class="next" onclick="window.location.href='../end/?landscapeId=' + landscapeId">
+        <img src="next.png" id="next" class="disabled">
 
         <div id="dragDiv"></div>
     </div>
@@ -229,6 +253,7 @@
         var requestedTime
         var sliding = false
         var landscapeId
+        var animals
 
         landscapes.read("../landscapes.json", populatePage)
 
@@ -236,8 +261,9 @@
 
             landscapeId = getParameter("landscapeId")
             const landscape = landscapes[landscapeId]
+            animals = landscape.animals
 
-            populateAudio(landscape.sound, function () { populateAnimals(landscape.animals) })
+            populateAudio(landscape.sound, function () { populateAnimals() })
             populateTitle(landscape)
         }
 
@@ -292,7 +318,7 @@
             requestedTime = audio.duration * value
         }
 
-        function populateAnimals(animals) {
+        function populateAnimals() {
 
             var animalsNode = document.getElementById("animals")
 
@@ -304,7 +330,7 @@
                 var img = document.createElement("img")
                 img.src = "../images/" + animal.img
                 img.setAttribute("draggable", "false")
-                
+
                 var draggableDiv = document.createElement("div")
                 draggableDiv.setAttribute("draggable", true)
                 draggableDiv.classList.add("animal")
@@ -346,11 +372,20 @@
                 img.src = "slot.png"
                 img.classList.add("slot")
                 img.style.left = (slot * 100 / audio.duration) + "%"
-                img.setAttribute("animalId", animalId)
+                img.animalId = animalId
                 img.ondrop = drop_handler
                 img.ondragover = dragover_handler
+                img.setAttribute("filled", "false")
 
                 slotsNode.appendChild(img)
+
+                var img = document.createElement("img")
+                img.src = "string.png"
+                img.classList.add("string")
+                img.style.left = (slot * 100 / audio.duration) + "%"
+
+                slotsNode.appendChild(img)
+
             }
         }
 
@@ -371,13 +406,13 @@
             var dragDiv = document.getElementById("dragDiv")
             dragDiv.style.width = width + "px"
             dragDiv.style.height = height + "px"
-            while(dragDiv.firstChild) {
+            while (dragDiv.firstChild) {
                 dragDiv.firstChild.remove()
             }
             dragDiv.appendChild(img)
 
             // those numbers seems to be randomly intepreted by FF, I'm tired.
-            e.dataTransfer.setDragImage(dragDiv, width/2, width*3/4)
+            e.dataTransfer.setDragImage(dragDiv, width / 2, width * 3 / 4)
         }
 
         function dragover_handler(e) {
@@ -388,12 +423,21 @@
         function drop_handler(e) {
             e.preventDefault()
             var playedAnimalId = e.dataTransfer.getData("text")
-            var rightAnimalId = e.target.getAttribute("animalId")
+            var slot = e.target
+            var rightAnimalId = slot.animalId
 
-            if(playedAnimalId == rightAnimalId) {
+            if ((playedAnimalId == rightAnimalId) && (slot.getAttribute("filled") == "false")) {
+                slot.src = "../images/" + animals[playedAnimalId].img
+                slot.setAttribute("filled", "true")
 
+                var nbUnfilled = document.querySelectorAll("#slots [filled='false']").length
+
+                if(nbUnfilled == 0) {
+                    var next = document.getElementById("next")
+
+                    next.classList.remove("disabled")
+                }
             }
-
         }
 
         function populateAudio(sound, then) {
