@@ -94,6 +94,11 @@
             margin-right: 1.04%;
         }
 
+        .animal img{
+            width: auto;
+            height: 100%;
+        }
+
         #title,
         #subtitle,
         .rules {
@@ -163,6 +168,17 @@
             display: none;
         }
 
+        #dragDiv {
+            display: block;
+            position: absolute;
+            left: -1000%;
+            top: -1000%;
+        }
+
+        #dragDiv img {
+            height: 100%;
+            width: 100%;
+        }
 
         .next {
             position: absolute;
@@ -200,6 +216,8 @@
         <input id="play" type="checkbox" onchange="pausePlay(event)"><label for="play"></label>
 
         <img src="next.png" class="next" onclick="window.location.href='../end/?landscapeId=' + landscapeId">
+
+        <div id="dragDiv"></div>
     </div>
 
 
@@ -285,12 +303,16 @@
 
                 var img = document.createElement("img")
                 img.src = "../images/" + animal.img
-                img.classList.add("animal")
-                img.setAttribute("draggable", true)
-                img.setAttribute("ondragstart", "drag(event)")
-                img.animalId = animalId
+                img.setAttribute("draggable", "false")
+                
+                var draggableDiv = document.createElement("div")
+                draggableDiv.setAttribute("draggable", true)
+                draggableDiv.classList.add("animal")
+                draggableDiv.setAttribute("ondragstart", "drag(event)")
+                draggableDiv.animalId = animalId
 
-                animalsNode.appendChild(img)
+                draggableDiv.appendChild(img)
+                animalsNode.appendChild(draggableDiv)
 
                 populateSlots(animal.slots, animalId)
             }
@@ -324,29 +346,54 @@
                 img.src = "slot.png"
                 img.classList.add("slot")
                 img.style.left = (slot * 100 / audio.duration) + "%"
-                img.animalId = animalId
+                img.setAttribute("animalId", animalId)
                 img.ondrop = drop_handler
                 img.ondragover = dragover_handler
 
                 slotsNode.appendChild(img)
-
             }
         }
 
         function drag(e) {
-            e.dataTransfer.setData("text", e.target.animalId)
-            e.dataTransfer.setDragImage(document.getElementById("animals"), 250, 70)
+
+            var picto = e.target
+
+            e.dataTransfer.setData("text", picto.animalId)
+
+            var width = picto.offsetWidth
+            var height = picto.offsetHeight
+
+            // clone the image so we can fix its size in pixels and not %
+            var img = picto.firstChild.cloneNode()
+            img.setAttribute("id", "")
+
+            // and put it into a div because else it does not work
+            var dragDiv = document.getElementById("dragDiv")
+            dragDiv.style.width = width + "px"
+            dragDiv.style.height = height + "px"
+            while(dragDiv.firstChild) {
+                dragDiv.firstChild.remove()
+            }
+            dragDiv.appendChild(img)
+
+            // those numbers seems to be randomly intepreted by FF, I'm tired.
+            e.dataTransfer.setDragImage(dragDiv, width/2, width*3/4)
         }
 
         function dragover_handler(e) {
-            e.preventDefault();
+            e.preventDefault()
             e.dataTransfer.dropEffect = "copy"
         }
 
         function drop_handler(e) {
-            e.preventDefault();
-            var data = e.dataTransfer.getData("text");
-            console.log({ playing: data })
+            e.preventDefault()
+            var playedAnimalId = e.dataTransfer.getData("text")
+            var rightAnimalId = e.target.getAttribute("animalId")
+
+            if(playedAnimalId == rightAnimalId) {
+
+            }
+
         }
 
         function populateAudio(sound, then) {
