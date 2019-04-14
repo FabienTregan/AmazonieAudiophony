@@ -284,15 +284,16 @@
                 var animal = animals[animalId]
 
                 var img = document.createElement("img")
-                img.src = animal.img
+                img.src = "../images/" + animal.img
                 img.classList.add("animal")
                 img.setAttribute("draggable", true)
                 img.setAttribute("ondragstart", "drag(event)")
-            } img.animalId = animalId
+                img.animalId = animalId
 
-            animalsNode.appendChild(img)
+                animalsNode.appendChild(img)
 
-            populateSlots(animal.slots, animalId)
+                populateSlots(animal.slots, animalId)
+            }
         }
 
         function touchHandler(event) {
@@ -311,7 +312,6 @@
             touch.target.dispatchEvent(simulatedEvent);
             event.preventDefault();
         }
-
 
         function populateSlots(slots, animalId) {
 
@@ -353,7 +353,7 @@
             audio = new Audio()
             audio.addEventListener("loadedmetadata", then)
             audio.addEventListener("timeupdate", timeUpdated)
-            audio.src = 'sounds/' + sound
+            audio.src = '../sounds/' + sound
         }
 
         function getParameter(paramName) {

@@ -266,7 +266,7 @@
 
                 var animalImage = document.createElement("img")
                 animalImage.classList.add("animalImage")
-                animalImage.src = animal.img
+                animalImage.src = "../images/" + animal.img
                 animalImage.addEventListener("click", play(animal.sound))
 
                 var infoImage = document.createElement("img")
@@ -302,7 +302,7 @@
             return function () {
                 if (!playing) {
                     playing = true;
-                    var audio = new Audio(file)
+                    var audio = new Audio("../sounds/" + file)
                     audio.addEventListener("ended", function () { playing = false })
                     audio.play()
                 }
@@ -313,7 +313,7 @@
             return function () {
 
                 var picto = document.getElementById("picto")
-                picto.src = animal.largeImg
+                picto.src = "../images/" + animal.largeImg
 
                 var popupplay = document.getElementById("popupplay")
                 var popupplayclone = popupplay.cloneNode()

@@ -92,28 +92,40 @@
         "title": "PAYSAGE SONORE DE GUYANE",
         "subtitle": "Sous-bois à la tombée du jour",
         "img": "p3.png",
+        "sound": "P1_Paysage_2mn30.mp3",
         "animals": {
             "tinamou": {
                 "img": "tinamou.png",
                 "largeImg": "tinamoupopup.png",
                 "sound": "P3_S1_OiseauTinamou_cendre.mp3",
                 "names": "Tinamou cendré<br>Cinereous tinamou<br><i>Crypturellus cinereus</i>",
-                "infos": "Famille des Tinamidés<br>Taille : 32 cm<br>Poids : 435 g"
-            },
+                "infos": "Famille des Tinamidés<br>Taille : 32 cm<br>Poids : 435 g",
+                "slots": [
+                    10,
+                    100
+                ]
+           },
             "troglodyte": {
                 "img": "troglodyte.png",
                 "largeImg": "troglodytepopup.png",
                 "sound": "P3_S2_OiseauTroglodyte_musicien.mp3",
                 "names": "Troglodyte musicien<br>Musician Wren<br><i>Cyphorhinus arada</i>",
-                "infos": "Famille des Troglodytidés<br>Taille : 12 cm<br>Poids : 18 à 24 g"
-            },
+                "infos": "Famille des Troglodytidés<br>Taille : 12 cm<br>Poids : 18 à 24 g",
+                "slots": [
+                    20,
+                    50
+                ]
+           },
             "toucan": {
                 "img": "toucan.png",
                 "largeImg": "toucanpopup.png",
                 "sound": "P3_S3_Toucan_Ramphastos_tucanus.mp3",
                 "names": "Toucan à bec rouge<br><i>Ramphastos tucanus</i>",
-                "infos": "Famille des Ramphastidés<br>Taille : 58 cm<br>Poids : 515 à 700 g"
-            }
+                "infos": "Famille des Ramphastidés<br>Taille : 58 cm<br>Poids : 515 à 700 g",
+                "slots": [
+                    70
+                ]
+           }
         }
     }
 }
