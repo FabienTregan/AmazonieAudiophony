@@ -177,7 +177,9 @@
             Paysages Sonores
         </div>
 
-        <img class="home" src="../home.png">
+        <div id="subtitle">sous-titre</div>
+
+        <img class="home" src="../home.png" onclick="window.location.href='../landscapes'">
 
         <div id="animals"></div>
 
@@ -280,7 +282,6 @@
             animalsNode.appendChild(img)
 
             populateSlots(animal.slots, animalId)
-        }
         }
 
         function touchHandler(event) {
