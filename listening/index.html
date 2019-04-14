@@ -94,7 +94,8 @@
             margin-right: 1.04%;
         }
 
-        .title,
+        #title,
+        #subtitle,
         .rules {
             position: absolute;
             left: 0;
@@ -102,10 +103,16 @@
             text-align: center;
         }
 
-        .title {
+        #title {
             font-family: 'Sansita Bold';
-            font-size: 1.5em;
-            top: 5.37%;
+            font-size: 1.35em;
+            top: 4%;
+        }
+
+        #subtitle {
+            font-family: 'Sansita Bold';
+            font-size: 0.8em;
+            top: 11%;
         }
 
         .rules {
@@ -173,9 +180,7 @@
     <div id="main" class="wideScreen">
         <img class="background" src="../background.png" />
 
-        <div class="title">
-            Paysages Sonores
-        </div>
+        <div id="title">TITRE</div>
 
         <div id="subtitle">sous-titre</div>
 
@@ -215,8 +220,14 @@
             const landscape = landscapes[landscapeId]
 
             populateAudio(landscape.sound, function () { populateAnimals(landscape.animals) })
-
+            populateTitle(landscape)
         }
+
+        function populateTitle(landscape) {
+            document.getElementById("title").innerHTML = landscape.title
+            document.getElementById("subtitle").innerHTML = landscape.subtitle
+        }
+
 
         function pausePlay(e) {
 
