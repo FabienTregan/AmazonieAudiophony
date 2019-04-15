@@ -208,6 +208,15 @@
             cursor: default;
             animation: none;
         }
+
+        .undraggable {
+            user-drag: none;
+            user-select: none;
+            -moz-user-select: none;
+            -webkit-user-drag: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
     </style>
 </head>
 
@@ -251,6 +260,7 @@
         var landscapeId
         var animals
 
+        makeAllExistingImagesUndraggable()
         landscapes.read("../landscapes.json", populatePage)
 
         function populatePage(landscapes) {
@@ -373,12 +383,16 @@
                 img.ondragover = dragover_handler
                 img.setAttribute("filled", "false")
 
+                makeUndraggable(img)
+
                 slotsNode.appendChild(img)
 
                 var img = document.createElement("img")
                 img.src = "string.png"
                 img.classList.add("string")
                 img.style.left = (slot * 100 / audio.duration) + "%"
+
+                makeUndraggable(img)
 
                 slotsNode.appendChild(img)
 
@@ -428,7 +442,7 @@
 
                 var nbUnfilled = document.querySelectorAll("#slots [filled='false']").length
 
-                if(nbUnfilled == 0) {
+                if (nbUnfilled == 0) {
                     var next = document.getElementById("next")
 
                     next.classList.remove("disabled")
@@ -457,6 +471,22 @@
             return decodeURIComponent(param)
         }
 
+        function makeAllExistingImagesUndraggable() {
+
+            var imgs = document.querySelectorAll("img")
+
+            for (var i = 0, len = imgs.length; i < len; ++i) {
+                var img = imgs[i]
+                makeUndraggable(img)
+            }
+        }
+
+        function makeUndraggable(node) {
+
+            node.setAttribute("draggable", "false")
+            node.setAttribute("onDragStart", "return false")
+            node.classList.add("undraggable")
+        }
 
     </script>
 </body>
