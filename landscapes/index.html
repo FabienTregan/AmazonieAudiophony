@@ -164,7 +164,7 @@
 
         }
 
-        document.body.addEventListener('dragstart', preventDefault)
+        document.body.addEventListener('dragstart', preventDefault, true)
         function preventDefault(e) {
             e.preventDefault()
         }

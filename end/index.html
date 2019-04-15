@@ -322,5 +322,10 @@
             return decodeURIComponent(param)
         }
 
+        document.body.addEventListener('dragstart', preventDefault, true)
+        function preventDefault(e) {
+            e.preventDefault()
+        }
+
     </script>
 </body>
