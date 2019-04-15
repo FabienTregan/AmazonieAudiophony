@@ -235,10 +235,10 @@
 
         <div id="slots"> </div>
 
-        <div id="slider" onmousedown="startSlide(event)">
+        <div id="slider" ontouchend="endSlide()" onmousedown="startSlide(event)" ontouchstart="startSlide(event.touches[0])">
             <img id="thumb" src="slider/thumb.png">
         </div>
-        <div id="glasspane" onmouseup="endSlide(event)" onmousemove="slide(event)"></div>
+        <div id="glasspane" onmouseout="endSlide()" ontouchend="endSlide()"  onmouseup="endSlide()" onmousemove="slide(event)" ontouchmove="slide(event.touches[0])"></div>
 
         <div class="rules">Faites glisser les images dans le bon emplacement.</div>
 
@@ -303,7 +303,7 @@
             slide(e)
         }
 
-        function endSlide(e) {
+        function endSlide() {
             document.getElementById("glasspane").classList.remove("shown")
             audio.currentTime = requestedTime
             sliding = false
@@ -348,23 +348,6 @@
 
                 populateSlots(animal.slots, animalId)
             }
-        }
-
-        function touchHandler(event) {
-            var touch = event.changedTouches[0];
-
-            var simulatedEvent = document.createEvent("MouseEvent");
-            simulatedEvent.initMouseEvent({
-                touchstart: "mousedown",
-                touchmove: "mousemove",
-                touchend: "mouseup"
-            }[event.type], true, true, window, 1,
-                touch.screenX, touch.screenY,
-                touch.clientX, touch.clientY, false,
-                false, false, false, 0, null);
-
-            touch.target.dispatchEvent(simulatedEvent);
-            event.preventDefault();
         }
 
         function populateSlots(slots, animalId) {
