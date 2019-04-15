@@ -298,15 +298,14 @@
             return decodeURIComponent(param)
         }
 
+        var audio = new Audio()
         function play(file) {
-            var playing = false
+            
             return function () {
-                if (!playing) {
-                    playing = true;
-                    var audio = new Audio("../sounds/" + file)
-                    audio.addEventListener("ended", function () { playing = false })
-                    audio.play()
-                }
+                audio.pause()
+                audio.currentTime = 0
+                audio.src = ("../sounds/" + file)
+                audio.play()
             }
         }
 
