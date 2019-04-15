@@ -164,6 +164,17 @@
         #image {
             left: 55%;
         }
+
+        .playagain {
+            position: absolute;
+            left: 88.85%;
+            top: 81.48%;
+            width: auto;
+            height: 12.87%;
+            cursor: pointer;
+            animation: bumping 0.75s ease-in-out infinite alternate;
+        }
+
     </style>
 </head>
 
@@ -193,6 +204,8 @@
             onmousemove="slide(event)" ontouchmove="slide(event.touches[0])"></div>
 
         <input id="play" type="checkbox" onchange="pausePlay(event)"><label for="play"></label>
+
+        <img src="playagain.png" class="playagain" class="disabled" onclick="window.location.href='../landscapes'">
 
         <div id="dragDiv"></div>
     </div>
