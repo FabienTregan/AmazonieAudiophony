@@ -63,8 +63,8 @@
         }
 
         #slots {
-            top: 48%;
-            height: 20.37%;
+            top: 60%;
+            height: 13.89%;
         }
 
         .slot,
@@ -144,7 +144,7 @@
         }
 
         #text,
-        #image   {
+        #image {
             position: absolute;
             top: 20%;
             width: 35%;
@@ -176,7 +176,8 @@
 
         <img class="home" src="../home.png" onclick="window.location.href='../landscapes'">
 
-        <div id="text">et patati et patata et blablabli et blablabla et patati et patata et blablabli et blablabla et patati et patata et blablabli et blablabla</div>
+        <div id="text">et patati et patata et blablabli et blablabla et patati et patata et blablabli et blablabla et
+            patati et patata et blablabli et blablabla</div>
 
         <img id="image" src="../images/paysage1.png">
 
@@ -289,20 +290,12 @@
                 var slot = slots[i]
 
                 var img = document.createElement("img")
-                img.src = "../images/" + animal.img
+                img.src = "../images/" + animal.miniImg
                 img.classList.add("slot")
                 img.style.left = (slot * 100 / audio.duration) + "%"
                 img.setAttribute("filled", "false")
 
                 slotsNode.appendChild(img)
-
-                var img = document.createElement("img")
-                img.src = "string.png"
-                img.classList.add("string")
-                img.style.left = (slot * 100 / audio.duration) + "%"
-
-                slotsNode.appendChild(img)
-
             }
         }
 

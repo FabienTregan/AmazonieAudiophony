@@ -6,10 +6,11 @@
         "sound": "P1_PaysageV2_2mn30.wav",
         "animals": {
             "cigalemontante": {
+                "img": "hulk.png",
                 "largeImg": "hulk.png",
+                "miniImg": "hulkmini.png",
                 "names": "Cigale montante",
                 "infos": "",
-                "img": "hulk.png",
                 "sound": "P1_S1S2_CigaleMontante.wav",
                 "slots": [
                     95
@@ -17,8 +18,9 @@
             },
             "cigaleguyane": {
                 "img": "hulk.png",
-                "sound": "P1_S3V2_CigaleGuyane.wav",
                 "largeImg": "hulk.png",
+                "miniImg": "hulkmini.png",
+                "sound": "P1_S3V2_CigaleGuyane.wav",
                 "names": "Cigale Guyane",
                 "infos": "",
                 "slots": [
@@ -38,6 +40,7 @@
             "singehurleur": {
                 "img": "singehurleur.png",
                 "largeImg": "singehurleurpopup.png",
+                "miniImg": "singehurleurmini.png",
                 "names": "Singe hurleur<br><i>Alouatta macconelli</i>",
                 "infos": "Famille des Atelidae<br>Taille : 50 à 70 cm avec la queue</br>Poids : 15 kg",
                 "sound": "P4_S3_Singe hurleur_chant.wav",
@@ -48,6 +51,7 @@
             "Allobatesfemoralis": {
                 "img": "hulk.png",
                 "largeImg": "hulk.png",
+                "miniImg": "hulkmini.png",
                 "names": "Batracien<br><i>Allobates femoralis</i>",
                 "infos": "Famille des Dendrobatidae<br>Taille mâle 28-33 mm, femelle 33-35 mm",
                 "sound": "P4_S4_Batracien_Epipedobates femoralis.wav",
@@ -57,7 +61,8 @@
             },
             "rainette": {
                 "img": "Hypsiboas.png",
-                "largeImg": "Hypsiboaspopup.png",
+                "largeImg": "hypsiboaspopup.png",
+                "miniImg": "hypsiboasmini.png",
                 "names": "Rainette pattes d’oie<br><i>Hypsiboas boans</i>",
                 "infos": "Famille des Hylidae<br>Taille : mâle 101-128 mm, femelle 91-123 mm",
                 "sound": "P4_S2_Rainette pattes doie.wav",
@@ -70,6 +75,7 @@
             "leptodactylus": {
                 "img": "leptodactylus.png",
                 "largeImg": "leptodactyluspopup.png",
+                "miniImg": "leptodactylusmini.png",
                 "names": "Batracien<br><i>Leptodactylus pentadactylus</i>",
                 "infos": "Famille des Hylidae<br>Taille : mâle 177 mm, femelle 185 mm",
                 "sound": "P4_S1_Batracien_Leptodactylus pendactylus.wav",
@@ -90,6 +96,7 @@
             "araponga": {
                 "img": "hulk.png",
                 "largeImg": "hulk.png",
+                "miniImg": "hulkmini.png",
                 "names": "Araponga blanc<br><i>Procnias albus</i>",
                 "infos": "",
                 "sound": "P2_S1_Araponga blanc_Procnias albus.wav",
@@ -100,6 +107,7 @@
             "piauhau": {
                 "img": "lipaugus.png",
                 "largeImg": "lipauguspopup.png",
+                "miniImg": "lipaugusmini.png",
                 "names": "Piauhau hurleur<br><i>Lipaugus vociferans</i>",
                 "infos": "",
                 "sound": "P2_S2_LipaugusVociférant.wav",
@@ -109,8 +117,9 @@
             },
             "alapi": {
                 "img": "hulk.png",
-                "sound": "P2_S3_OiseauAlapiDeBuffon.wav",
                 "largeImg": "hulk.png",
+                "miniImg": "hulkmini.png",
+                "sound": "P2_S3_OiseauAlapiDeBuffon.wav",
                 "names": "Alapi de Buffon<br><i>Myrmeciza atrothorax</i>",
                 "infos": "Famille des Thamnophilidés<br>Taille : 14 cm<br>Poids : 14 à 18 g",
                 "slots": [
@@ -120,6 +129,7 @@
             "manakin": {
                 "img": "manacus.png",
                 "largeImg": "manacuspopup.png",
+                "miniImg": "manacusmini.png",
                 "names": "Manakin casse-noisette<br><i>Manacus_manacus </i>",
                 "infos": "Famille des Pipridés<br>Taille : 11 cm<br>Poids : 16 à 18 g",
                 "sound": "P2_S4_Oiseau_Manacus_manacus.wav",
@@ -139,6 +149,7 @@
             "leptodactylus": {
                 "img": "leptodactylus.png",
                 "largeImg": "leptodactyluspopup.png",
+                "miniImg": "leptodactylusmini.png",
                 "names": "Batracien<br><i>Leptodactylus rhodomystax</i>",
                 "infos": "Famille des Leptodactylidae<br>Taille : 60 mm",
                 "sound": "P5_S4_Leptodactylus knudseni_L mystaceus.wav",
@@ -149,6 +160,7 @@
             "singearaignee": {
                 "img": "singearaignee.png",
                 "largeImg": "singearaigneeopopup.png",
+                "miniImg": "singearaigneemini.png",
                 "names": "Singe-araignée<br><i>Ateles paniscus</i>",
                 "infos": "",
                 "sound": "P5_S5_Singe araignee.wav",
@@ -160,6 +172,7 @@
             "grillonforgeron": {
                 "img": "hulk.png",
                 "largeImg": "hulk.png",
+                "miniImg": "hulkmini.png",
                 "names": "Grillon forgeron<br><i></i>",
                 "infos": "<br>",
                 "sound": "P5_S2_Grillon forgeron.wav",
@@ -170,6 +183,7 @@
             "trachycephalus": {
                 "img": "trachycephalus.png",
                 "largeImg": "trachycephaluspopup.png",
+                "miniImg": "trachycephalusmini.png",
                 "names": "Grenouille metronome<br><i>Trachycephalus hadroceps</i>",
                 "infos": "Famille des Hylidae<br>Chante avec puissance depuis des cavités d'arbre<br>à plus de 30 m de hauteur. ",
                 "sound": "P5_S3_Grenouille metronome.wav",
@@ -189,6 +203,7 @@
             "tinamou": {
                 "img": "tinamou.png",
                 "largeImg": "tinamoupopup.png",
+                "miniImg": "tinamoumini.png",
                 "sound": "P3_S1_OiseauTinamou cendre.wav",
                 "names": "Tinamou cendré<br>Cinereous tinamou<br><i>Crypturellus cinereus</i>",
                 "infos": "Famille des Tinamidés<br>Taille : 32 cm<br>Poids : 435 g",
@@ -200,6 +215,7 @@
             "troglodyte": {
                 "img": "troglodyte.png",
                 "largeImg": "troglodytepopup.png",
+                "miniImg": "troglodytemini.png",
                 "sound": "P3_S2_OiseauTroglodyte musicien.wav",
                 "names": "Troglodyte musicien<br>Musician Wren<br><i>Cyphorhinus arada</i>",
                 "infos": "Famille des Troglodytidés<br>Taille : 12 cm<br>Poids : 18 à 24 g",
@@ -211,6 +227,7 @@
             "toucan": {
                 "img": "toucan.png",
                 "largeImg": "toucanpopup.png",
+                "miniImg": "toucanmini.png",
                 "sound": "P3_S3_Toucan_Ramphastos tucanus.wav",
                 "names": "Toucan à bec rouge<br><i>Ramphastos tucanus</i>",
                 "infos": "Famille des Ramphastidés<br>Taille : 58 cm<br>Poids : 515 à 700 g",
