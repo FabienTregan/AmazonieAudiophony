@@ -3,30 +3,27 @@
         "title": "PAYSAGE SONORE DE GUYANE",
         "subtitle": "Levé du jour pluvieux au carbet de Saint-Elie",
         "img": "p1.png",
-        "sound": "P1_Paysage_2mn30.mp3",
+        "sound": "P1_PaysageV2_2mn30.wav",
         "animals": {
-            "lapin": {
-                "img": "image1.png",
-                "sound": "sound1.mp3",
+            "cigalemontante": {
+                "largeImg": "hulk.png",
+                "names": "Cigale montante",
+                "infos": "",
+                "img": "hulk.png",
+                "sound": "P1_S1S2_CigaleMontante.wav",
                 "slots": [
-                    10,
-                    100
+                    95
                 ]
             },
-            "chat": {
-                "img": "image1.png",
-                "sound": "sound2.mp3",
+            "cigaleguyane": {
+                "img": "hulk.png",
+                "sound": "P1_S3V2_CigaleGuyane.wav",
+                "largeImg": "hulk.png",
+                "names": "Cigale Guyane",
+                "infos": "",
                 "slots": [
-                    0,
-                    30
-                ]
-            },
-            "chien": {
-                "img": "image2.png",
-                "sound": "sound3.mp3",
-                "slots": [
-                    70,
-                    150.121396
+                    13,
+                    65
                 ]
             }
         }
@@ -35,18 +32,50 @@
         "title": "PAYSAGE SONORE DE GUYANE",
         "subtitle": "De nuit, premières pluies en forêt après une longue saison sèche",
         "img": "p4.png",
+        "sound": "P4_Paysage_2mn7.wav",
         "animals": {
-            "lapin": {
-                "img": "image1.png",
-                "sound": "sound1.mp3"
+            "singehurleur": {
+                "img": "singehurleur.png",
+                "largeImg": "singehurleurpopup.png",
+                "names": "Singe hurleur<br><i>Alouatta macconelli</i>",
+                "infos": "Famille des Atelidae<br>Taille : 50 à 70 cm avec la queue</br>Poids : 15 kg",
+                "sound": "P4_S3_Singe hurleur_chant.wav",
+                "slots": [
+                    55
+                ]
             },
-            "chat": {
-                "img": "image1.png",
-                "sound": "sound1.mp3"
+            "Allobatesfemoralis": {
+                "img": "hulk.png",
+                "largeImg": "hulk.png",
+                "names": "Batracien<br><i>Allobates femoralis</i>",
+                "infos": "Famille des Dendrobatidae<br>Taille mâle 28-33 mm, femelle 33-35 mm",
+                "sound": "P4_S4_Batracien_Epipedobates femoralis.wav",
+                "slots": [
+                    102
+                ]
             },
-            "chien": {
-                "img": "image1.png",
-                "sound": "sound1.mp3"
+            "rainette": {
+                "img": "Hypsiboas.png",
+                "largeImg": "Hypsiboaspopup.png",
+                "names": "Rainette pattes d’oie<br><i>Hypsiboas boans</i>",
+                "infos": "Famille des Hylidae<br>Taille : mâle 101-128 mm, femelle 91-123 mm",
+                "sound": "P4_S2_Rainette pattes doie.wav",
+                "slots": [
+                    18,
+                    37,
+                    88
+                ]
+            },
+            "leptodactylus": {
+                "img": "leptodactylus.png",
+                "largeImg": "leptodactyluspopup.png",
+                "names": "Batracien<br><i>Leptodactylus pentadactylus</i>",
+                "infos": "Famille des Hylidae<br>Taille : mâle 177 mm, femelle 185 mm",
+                "sound": "P4_S1_Batracien_Leptodactylus pendactylus.wav",
+                "slots": [
+                    7,
+                    77
+                ]
             }
         }
     },
@@ -54,18 +83,47 @@
         "title": "PAYSAGE SONORE DE GUYANE",
         "subtitle": "Sous-bois de jour",
         "img": "p2.png",
+        "sound": "P2_Paysage_2mn49.wav",
         "animals": {
-            "lapin": {
-                "img": "image1.png",
-                "sound": "sound1.mp3"
+            "araponga": {
+                "img": "hulk.png",
+                "largeImg": "hulk.png",
+                "names": "Araponga blanc<br><i>Procnias albus</i>",
+                "infos": "",
+                "sound": "P2_S1_Araponga blanc_Procnias albus.wav",
+                "slots": [
+                    39
+                ]
             },
-            "chat": {
-                "img": "image1.png",
-                "sound": "sound1.mp3"
+            "piauhau": {
+                "img": "lipaugus.png",
+                "largeImg": "lipauguspopup.png",
+                "names": "Piauhau hurleur<br><i>Lipaugus vociferans</i>",
+                "infos": "",
+                "sound": "P2_S2_LipaugusVociférant.wav",
+                "slots": [
+                    78
+                ]
             },
-            "chien": {
-                "img": "image1.png",
-                "sound": "sound1.mp3"
+            "alapi": {
+                "img": "hulk.png",
+                "sound": "P2_S3_OiseauAlapiDeBuffon.wav",
+                "largeImg": "hulk.png",
+                "names": "Alapi de Buffon<br><i>Myrmeciza atrothorax</i>",
+                "infos": "Famille des Thamnophilidés<br>Taille : 14 cm<br>Poids : 14 à 18 g",
+                "slots": [
+                    135
+                ]
+            },
+            "manakin": {
+                "img": "manacus.png",
+                "largeImg": "manacuspopup.png",
+                "names": "Manakin casse-noisette<br><i>Manacus_manacus </i>",
+                "infos": "Famille des Pipridés<br>Taille : 11 cm<br>Poids : 16 à 18 g",
+                "sound": "P2_S4_Oiseau_Manacus_manacus.wav",
+                "slots": [
+                    7
+                ]
             }
         }
     },
@@ -73,18 +131,48 @@
         "title": "PAYSAGE SONORE DE GUYANE",
         "subtitle": "Forêt de nuit",
         "img": "p5.png",
+        "sound": "P5_Paysage_2mn.wav",
         "animals": {
-            "lapin": {
-                "img": "image1.png",
-                "sound": "sound1.mp3"
+            "leptodactylus": {
+                "img": "leptodactylus.png",
+                "largeImg": "leptodactyluspopup.png",
+                "names": "Batracien<br><i>Leptodactylus rhodomystax</i>",
+                "infos": "Famille des Leptodactylidae<br>Taille : 60 mm",
+                "sound": "P5_S4_Leptodactylus knudseni_L mystaceus.wav",
+                "slots": [
+                    48
+                ]
             },
-            "chat": {
-                "img": "image1.png",
-                "sound": "sound1.mp3"
+            "singearaignee": {
+                "img": "singearaignee.png",
+                "largeImg": "singearaigneeopopup.png",
+                "names": "Singe-araignée<br><i>Ateles paniscus</i>",
+                "infos": "",
+                "sound": "P5_S5_Singe araignee.wav",
+                "slots": [
+                    71,
+                    98
+                ]
             },
-            "chien": {
-                "img": "image1.png",
-                "sound": "sound1.mp3"
+            "grillonforgeron": {
+                "img": "hulk.png",
+                "largeImg": "hulk.png",
+                "names": "Grillon forgeron<br><i></i>",
+                "infos": "<br>",
+                "sound": "P5_S2_Grillon forgeron.wav",
+                "slots": [
+                    15
+                ]
+            },
+            "trachycephalus": {
+                "img": "trachycephalus.png",
+                "largeImg": "trachycephaluspopup.png",
+                "names": "Grenouille metronome<br><i>Trachycephalus hadroceps</i>",
+                "infos": "Famille des Hylidae<br>Chante avec puissance depuis des cavités d'arbre<br>à plus de 30 m de hauteur. ",
+                "sound": "P5_S3_Grenouille metronome.wav",
+                "slots": [
+                    31
+                ]
             }
         }
     },
@@ -92,40 +180,41 @@
         "title": "PAYSAGE SONORE DE GUYANE",
         "subtitle": "Sous-bois à la tombée du jour",
         "img": "p3.png",
-        "sound": "P1_Paysage_2mn30.mp3",
+        "sound": "P3_Paysage_2mn50.wav",
         "animals": {
             "tinamou": {
                 "img": "tinamou.png",
                 "largeImg": "tinamoupopup.png",
-                "sound": "P3_S1_OiseauTinamou_cendre.mp3",
+                "sound": "P3_S1_OiseauTinamou cendre.wav",
                 "names": "Tinamou cendré<br>Cinereous tinamou<br><i>Crypturellus cinereus</i>",
                 "infos": "Famille des Tinamidés<br>Taille : 32 cm<br>Poids : 435 g",
                 "slots": [
-                    10,
-                    100
+                    26,
+                    66
                 ]
-           },
+            },
             "troglodyte": {
                 "img": "troglodyte.png",
                 "largeImg": "troglodytepopup.png",
-                "sound": "P3_S2_OiseauTroglodyte_musicien.mp3",
+                "sound": "P3_S2_OiseauTroglodyte musicien.wav",
                 "names": "Troglodyte musicien<br>Musician Wren<br><i>Cyphorhinus arada</i>",
                 "infos": "Famille des Troglodytidés<br>Taille : 12 cm<br>Poids : 18 à 24 g",
                 "slots": [
-                    20,
-                    50
+                    49,
+                    83
                 ]
-           },
+            },
             "toucan": {
                 "img": "toucan.png",
                 "largeImg": "toucanpopup.png",
-                "sound": "P3_S3_Toucan_Ramphastos_tucanus.mp3",
+                "sound": "P3_S3_Toucan_Ramphastos tucanus.wav",
                 "names": "Toucan à bec rouge<br><i>Ramphastos tucanus</i>",
                 "infos": "Famille des Ramphastidés<br>Taille : 58 cm<br>Poids : 515 à 700 g",
                 "slots": [
-                    70
+                    108,
+                    123
                 ]
-           }
+            }
         }
     }
 }
