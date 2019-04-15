@@ -26,7 +26,8 @@
                     65
                 ]
             }
-        }
+        },
+        "endText" : "Vous aurez peut-être entendu un autre oiseau. Il s’agit de la Coracine pourpre (<i>Querula purpurata</i>) qui chante au rythme d'une petite grenouille de forêt."
     },
     "paysage4": {
         "title": "PAYSAGE SONORE DE GUYANE",
@@ -77,7 +78,8 @@
                     77
                 ]
             }
-        }
+        },
+        "endText" : ""
     },
     "paysage2": {
         "title": "PAYSAGE SONORE DE GUYANE",
@@ -125,7 +127,8 @@
                     7
                 ]
             }
-        }
+        },
+        "endText" : "En fond sonore, vous pouvez aussi entendre deux autres oiseaux : l'Alapi carillonneur (<i>Percnostola rufifrons</i>) et l’araçari vert (<i>Pteroglossus viridis</i>)."
     },
     "paysage5": {
         "title": "PAYSAGE SONORE DE GUYANE",
@@ -174,7 +177,8 @@
                     31
                 ]
             }
-        }
+        },
+        "endText" : ""
     },
     "paysage3": {
         "title": "PAYSAGE SONORE DE GUYANE",
@@ -215,6 +219,7 @@
                     123
                 ]
             }
-        }
+        },
+        "endText" : "En fond sonore, vous pouvez aussi entendre deux autres oiseaux : Tyran pirate (<i>Legatus leucophaius</i>) et l’ortalide motmot Ortalis motmot."
     }
 }

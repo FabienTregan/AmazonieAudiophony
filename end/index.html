@@ -155,6 +155,10 @@
             left: 10%;
         }
 
+        #text p {
+            margin-top: 0;
+        }
+
         #image {
             left: 55%;
         }
@@ -210,6 +214,7 @@
 
             populateAudio(landscape.sound, function () { populateAnimals() })
             populateTitle(landscape)
+            populateText(landscape)
         }
 
         function populateTitle(landscape) {
@@ -306,6 +311,11 @@
             audio.addEventListener("loadedmetadata", then)
             audio.addEventListener("timeupdate", timeUpdated)
             audio.src = '../sounds/' + sound
+        }
+
+        function populateText(landscape) {
+            var textNode = document.getElementById("text")
+            textNode.innerHTML = "<p>Félicitation, vous avez reconnu et placé au bon endroit tous les cris d'animaux principaux de ce paysage sonore.</p><p>" + landscape.endText + "</p>"
         }
 
         function getParameter(paramName) {
