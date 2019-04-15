@@ -50,18 +50,6 @@
             height: auto;
         }
 
-        #animals {
-            top: 24%;
-            position: absolute;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            left: 0;
-            width: 100%;
-            height: 20.37%;
-        }
-
         #slots,
         #slider {
             position: absolute;
@@ -91,21 +79,8 @@
             transform: translate(-50%, 100%);
         }
 
-        .animal {
-            width: auto;
-            height: 100%;
-            margin-left: 1.04%;
-            margin-right: 1.04%;
-        }
-
-        .animal img {
-            width: auto;
-            height: 100%;
-        }
-
         #title,
-        #subtitle,
-        .rules {
+        #subtitle {
             position: absolute;
             left: 0;
             width: 100%;
@@ -122,11 +97,6 @@
             font-family: 'Sansita Bold';
             font-size: 0.8em;
             top: 11%;
-        }
-
-        .rules {
-            font-family: 'Sansita Medium';
-            bottom: 10.19%;
         }
 
         a:active,
@@ -150,6 +120,7 @@
         }
 
         #play {
+            position: absolute;
             left: -500%;
         }
 
@@ -172,51 +143,20 @@
             display: none;
         }
 
-        #dragDiv {
-            display: block;
+        #text,
+        #image   {
             position: absolute;
-            left: -1000%;
-            top: -1000%;
+            top: 20%;
+            width: 35%;
+            height: auto;
         }
 
-        #dragDiv img {
-            height: 100%;
-            width: 100%;
+        #text {
+            left: 10%;
         }
 
-        #next {
-            position: absolute;
-            left: 88.85%;
-            top: 81.48%;
-            width: auto;
-            height: 12.87%;
-            cursor: pointer;
-            animation: bumping 0.75s ease-in-out infinite alternate;
-        }
-
-        @keyframes bumping {
-            0% {
-                transform: scale(1);
-            }
-
-            100% {
-                transform: scale(1.1);
-            }
-        }
-
-        #next.disabled {
-            opacity: 0.4;
-            cursor: default;
-            animation: none;
-        }
-
-        .undraggable {
-            user-drag: none;
-            user-select: none;
-            -moz-user-select: none;
-            -webkit-user-drag: none;
-            -webkit-user-select: none;
-            -ms-user-select: none;
+        #image {
+            left: 55%;
         }
     </style>
 </head>
@@ -232,24 +172,23 @@
 
         <img class="home" src="../home.png" onclick="window.location.href='../landscapes'">
 
-        <div id="animals"></div>
+        <div id="text">et patati et patata et blablabli et blablabla et patati et patata et blablabli et blablabla et patati et patata et blablabli et blablabla</div>
+
+        <img id="image" src="../images/paysage1.png">
 
         <div id="slots"> </div>
 
-        <div id="slider" ontouchend="endSlide()" onmousedown="startSlide(event)" ontouchstart="startSlide(event.touches[0])">
+        <div id="slider" ontouchend="endSlide()" onmousedown="startSlide(event)"
+            ontouchstart="startSlide(event.touches[0])">
             <img id="thumb" src="slider/thumb.png">
         </div>
-        <div id="glasspane" onmouseout="endSlide()" ontouchend="endSlide()"  onmouseup="endSlide()" onmousemove="slide(event)" ontouchmove="slide(event.touches[0])"></div>
-
-        <div class="rules">Faites glisser les images dans le bon emplacement.</div>
+        <div id="glasspane" onmouseout="endSlide()" ontouchend="endSlide()" onmouseup="endSlide()"
+            onmousemove="slide(event)" ontouchmove="slide(event.touches[0])"></div>
 
         <input id="play" type="checkbox" onchange="pausePlay(event)"><label for="play"></label>
 
-        <img src="next.png" id="next" class="disabled">
-
         <div id="dragDiv"></div>
     </div>
-
 
     <script>
         "use strict";
@@ -261,7 +200,6 @@
         var landscapeId
         var animals
 
-        makeAllExistingImagesUndraggable()
         landscapes.read("../landscapes.json", populatePage)
 
         function populatePage(landscapes) {
@@ -334,24 +272,11 @@
                 var animalId = keys[i]
                 var animal = animals[animalId]
 
-                var img = document.createElement("img")
-                img.src = "../images/" + animal.img
-                img.setAttribute("draggable", "false")
-
-                var draggableDiv = document.createElement("div")
-                draggableDiv.setAttribute("draggable", true)
-                draggableDiv.classList.add("animal")
-                draggableDiv.setAttribute("ondragstart", "drag(event)")
-                draggableDiv.animalId = animalId
-
-                draggableDiv.appendChild(img)
-                animalsNode.appendChild(draggableDiv)
-
-                populateSlots(animal.slots, animalId)
+                populateSlots(animal.slots, animal)
             }
         }
 
-        function populateSlots(slots, animalId) {
+        function populateSlots(slots, animal) {
 
             var slotsNode = document.getElementById("slots")
 
@@ -359,15 +284,10 @@
                 var slot = slots[i]
 
                 var img = document.createElement("img")
-                img.src = "slot.png"
+                img.src = "../images/" + animal.img
                 img.classList.add("slot")
                 img.style.left = (slot * 100 / audio.duration) + "%"
-                img.animalId = animalId
-                img.ondrop = drop_handler
-                img.ondragover = dragover_handler
                 img.setAttribute("filled", "false")
-
-                makeUndraggable(img)
 
                 slotsNode.appendChild(img)
 
@@ -376,62 +296,8 @@
                 img.classList.add("string")
                 img.style.left = (slot * 100 / audio.duration) + "%"
 
-                makeUndraggable(img)
-
                 slotsNode.appendChild(img)
 
-            }
-        }
-
-        function drag(e) {
-
-            var picto = e.target
-
-            e.dataTransfer.setData("text", picto.animalId)
-
-            var width = picto.offsetWidth
-            var height = picto.offsetHeight
-
-            // clone the image so we can fix its size in pixels and not %
-            var img = picto.firstChild.cloneNode()
-            img.setAttribute("id", "")
-
-            // and put it into a div because else it does not work
-            var dragDiv = document.getElementById("dragDiv")
-            dragDiv.style.width = width + "px"
-            dragDiv.style.height = height + "px"
-            while (dragDiv.firstChild) {
-                dragDiv.firstChild.remove()
-            }
-            dragDiv.appendChild(img)
-
-            // those numbers seems to be randomly intepreted by FF, I'm tired.
-            e.dataTransfer.setDragImage(dragDiv, width / 2, width * 3 / 4)
-        }
-
-        function dragover_handler(e) {
-            e.preventDefault()
-            e.dataTransfer.dropEffect = "copy"
-        }
-
-        function drop_handler(e) {
-            e.preventDefault()
-            var playedAnimalId = e.dataTransfer.getData("text")
-            var slot = e.target
-            var rightAnimalId = slot.animalId
-
-            if ((playedAnimalId == rightAnimalId) && (slot.getAttribute("filled") == "false")) {
-                slot.src = "../images/" + animals[playedAnimalId].img
-                slot.setAttribute("filled", "true")
-
-                var nbUnfilled = document.querySelectorAll("#slots [filled='false']").length
-
-                if (nbUnfilled == 0) {
-                    var next = document.getElementById("next")
-
-                    next.classList.remove("disabled")
-                    next.addEventListener("click", function() {document.location.href  = "../end/?landscapeId=" + getParameter("landscapeId")})
-                }
             }
         }
 
@@ -454,23 +320,6 @@
                 : url
 
             return decodeURIComponent(param)
-        }
-
-        function makeAllExistingImagesUndraggable() {
-
-            var imgs = document.querySelectorAll("img")
-
-            for (var i = 0, len = imgs.length; i < len; ++i) {
-                var img = imgs[i]
-                makeUndraggable(img)
-            }
-        }
-
-        function makeUndraggable(node) {
-
-            node.setAttribute("draggable", "false")
-            node.setAttribute("onDragStart", "return false")
-            node.classList.add("undraggable")
         }
 
     </script>

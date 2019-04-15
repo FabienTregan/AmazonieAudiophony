@@ -1,0 +1,18 @@
+#slider {
+  background-image: url('track.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% 56.92%;
+}
+
+#thumb   {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: auto;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% 100%;
+  transform: translateX(-50%);
+}
