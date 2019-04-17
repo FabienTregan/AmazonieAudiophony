@@ -6,23 +6,23 @@
         "sound": "P1_PaysageV2_2mn30.wav",
         "animals": {
             "cigalemontante": {
-                "img": "hulk.png",
-                "largeImg": "hulk.png",
-                "miniImg": "hulkmini.png",
-                "names": "Cigale montante",
-                "infos": "",
+                "img": "grillonpastille.png",
+                "largeImg": "grillonpastillepopup.png",
+                "miniImg": "grillonpastillemini.png",
+                "names": "Grillon<br><i>Lerneca fuscipennis<i>",
+                "infos": "Enregistrement au carbet de Saint-Elie",
                 "sound": "P1_S1S2_CigaleMontante.wav",
                 "slots": [
                     95
                 ]
             },
             "cigaleguyane": {
-                "img": "hulk.png",
-                "largeImg": "hulk.png",
-                "miniImg": "hulkmini.png",
+                "img": "cicadanouragues.png",
+                "largeImg": "cicadanouraguespopup.png",
+                "miniImg": "cicadanouraguesmini.png",
                 "sound": "P1_S3V2_CigaleGuyane.wav",
-                "names": "Cigale Guyane",
-                "infos": "",
+                "names": "Cigale",
+                "infos": "Non déterminée parmi la cinquantaine de cigales inventoriées en Guyane.",
                 "slots": [
                     13,
                     65
@@ -48,10 +48,10 @@
                     55
                 ]
             },
-            "Allobatesfemoralis": {
-                "img": "hulk.png",
-                "largeImg": "hulk.png",
-                "miniImg": "hulkmini.png",
+            "allobatesfemoralis": {
+                "img": "allobates.png",
+                "largeImg": "allobatespopup.png",
+                "miniImg": "allobatesmini.png",
                 "names": "Batracien<br><i>Allobates femoralis</i>",
                 "infos": "Famille des Dendrobatidae<br>Taille mâle 28-33 mm, femelle 33-35 mm",
                 "sound": "P4_S4_Batracien_Epipedobates femoralis.wav",
@@ -94,11 +94,11 @@
         "sound": "P2_Paysage_2mn49.wav",
         "animals": {
             "araponga": {
-                "img": "hulk.png",
-                "largeImg": "hulk.png",
-                "miniImg": "hulkmini.png",
+                "img": "araponga.png",
+                "largeImg": "arapongapopup.png",
+                "miniImg": "arapongamini.png",
                 "names": "Araponga blanc<br><i>Procnias albus</i>",
-                "infos": "",
+                "infos": "Famille des <i>Cotingidés</i><br>Taille : 28 cm<br>Poids : 219 g",
                 "sound": "P2_S1_Araponga blanc_Procnias albus.wav",
                 "slots": [
                     39
@@ -108,17 +108,17 @@
                 "img": "lipaugus.png",
                 "largeImg": "lipauguspopup.png",
                 "miniImg": "lipaugusmini.png",
-                "names": "Piauhau hurleur<br><i>Lipaugus vociferans</i>",
-                "infos": "",
+                "names": "Piauhau hurleur<br>paypayo<br><i>Lipaugus vociferans</i>",
+                "infos": "Famille des <i>Cotingidés</i><br>Taille : 28 cm",
                 "sound": "P2_S2_LipaugusVociférant.wav",
                 "slots": [
                     78
                 ]
             },
             "alapi": {
-                "img": "hulk.png",
-                "largeImg": "hulk.png",
-                "miniImg": "hulkmini.png",
+                "img": "alapi.png",
+                "largeImg": "alapipopup.png",
+                "miniImg": "alapimini.png",
                 "sound": "P2_S3_OiseauAlapiDeBuffon.wav",
                 "names": "Alapi de Buffon<br><i>Myrmeciza atrothorax</i>",
                 "infos": "Famille des Thamnophilidés<br>Taille : 14 cm<br>Poids : 14 à 18 g",
@@ -130,7 +130,7 @@
                 "img": "manacus.png",
                 "largeImg": "manacuspopup.png",
                 "miniImg": "manacusmini.png",
-                "names": "Manakin casse-noisette<br><i>Manacus_manacus </i>",
+                "names": "Manakin casse-noisette<br><i>Manacus manacus</i>",
                 "infos": "Famille des Pipridés<br>Taille : 11 cm<br>Poids : 16 à 18 g",
                 "sound": "P2_S4_Oiseau_Manacus_manacus.wav",
                 "slots": [
@@ -162,19 +162,19 @@
                 "largeImg": "singearaigneeopopup.png",
                 "miniImg": "singearaigneemini.png",
                 "names": "Singe-araignée<br><i>Ateles paniscus</i>",
-                "infos": "",
+                "infos": "Famille des Atelidae<br>Taille : 64 – 90 cm<br>Poids : 6,5 – 13,5 kg",
                 "sound": "P5_S5_Singe araignee.wav",
                 "slots": [
                     71,
                     98
                 ]
             },
-            "grillonforgeron": {
-                "img": "hulk.png",
-                "largeImg": "hulk.png",
-                "miniImg": "hulkmini.png",
-                "names": "Grillon forgeron<br><i></i>",
-                "infos": "<br>",
+            "grillon": {
+                "img": "grillonpastille.png",
+                "largeImg": "grillonpastillepopup.png",
+                "miniImg": "grillonpastillemini.png",
+                "names": "Grillon de Guyane<br><i></i>",
+                "infos": "Non déterminé.<br>Commence à chanter à la tombée de la nuit.",
                 "sound": "P5_S2_Grillon forgeron.wav",
                 "slots": [
                     15
@@ -237,6 +237,6 @@
                 ]
             }
         },
-        "endText" : "En fond sonore, vous pouvez aussi entendre deux autres oiseaux : Tyran pirate (<i>Legatus leucophaius</i>) et l’ortalide motmot Ortalis motmot."
+        "endText" : "En fond sonore, vous pouvez aussi entendre deux autres oiseaux : Tyran pirate (<i>Legatus leucophaius</i>) et l’ortalide motmot (<i>Ortalis motmot.</i>)"
     }
 }
