@@ -30,6 +30,11 @@
             src: url('../font/Sansita-Medium.otf') format('woff');
         }
 
+        @font-face {
+            font-family: 'Sansita';
+            src: url('../font/Sansita-Regular.otf') format('woff');
+        }
+
         body {
             color: white;
             background-color: black;
@@ -103,6 +108,16 @@
         .animal img {
             width: auto;
             height: 100%;
+        }
+
+        .info {
+            position: relative;
+            top: 45%;
+            left: -2%;
+            width: auto;
+            height: 20%;
+            cursor: pointer;
+            border-radius: 40%;
         }
 
         #title,
@@ -196,6 +211,52 @@
             animation: bumping 0.75s ease-in-out infinite alternate;
         }
 
+        #popups {
+            background-color: rgba(0, 0, 0, 0.75);
+        }
+
+        .popup.fiche {
+            position: absolute;
+
+            background-image: url("popup.png");
+            background-size: 100% 100%;
+
+            width: 48.18%;
+            height: 92.87%;
+        }
+
+        #names,
+        #infos {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+        }
+
+        #names {
+            font-family: Sansita Bold;
+            top: 2.5%;
+        }
+
+        #names::first-line {
+            font-size: 1.35em;
+            line-height: 1.5em;
+        }
+
+        #infos {
+            font-family: Sansita;
+            top: 81.5%;
+            line-height: 1.3em;
+        }
+
+        #picto {
+            position: absolute;
+            left: 50%;
+            top: 25%;
+            width: 43.24%;
+            height: 39.88%;
+            transform: translateX(-50%);
+        }
+
         @keyframes bumping {
             0% {
                 transform: scale(1);
@@ -250,6 +311,25 @@
         <img src="next.png" id="next" class="disabled">
 
         <div id="dragDiv"></div>
+
+        <div id="popups">
+            <div class="popup fiche">
+                <div class="clickArea" style="left: 87%; top: 4%; width: 7.5%; height: 7.5%; " onclick="individualAudio.pause(); popup_hide();">
+                </div>
+
+                <div id="names"></div>
+
+                <img id="picto" src="picto1.png">
+
+                <div id="popupplay" class="clickArea" style="left: 45%; top: 69%; width: 9.5%; height: 9.5%; ">
+                </div>
+
+                <div id="infos"></div>
+
+            </div>
+
+        </div>
+
     </div>
 
 
@@ -346,10 +426,50 @@
                 draggableDiv.setAttribute("ondragstart", "drag(event)")
                 draggableDiv.animalId = animalId
 
+                var infoImage = document.createElement("img")
+                infoImage.classList.add("info")
+                infoImage.src = "i.png"
+                infoImage.addEventListener("click", showInfos(animal))
+
                 draggableDiv.appendChild(img)
                 animalsNode.appendChild(draggableDiv)
+                animalsNode.appendChild(infoImage)
 
                 populateSlots(animal.slots, animalId)
+            }
+        }
+
+        function showInfos(animal) {
+            return function () {
+
+                var picto = document.getElementById("picto")
+                picto.src = "../images/" + animal.largeImg
+
+                var popupplay = document.getElementById("popupplay")
+                var popupplayclone = popupplay.cloneNode()
+                var parentNode = popupplay.parentNode
+                popupplayclone.addEventListener("click", play(animal.sound))
+                parentNode.removeChild(popupplay)
+                parentNode.appendChild(popupplayclone)
+
+                var names = document.getElementById("names")
+                names.innerHTML = animal.names
+
+                var infos = document.getElementById("infos")
+                infos.innerHTML = animal.infos
+
+                popup_show()
+            }
+        }
+
+        var individualAudio = new Audio()
+        function play(file) {
+            
+            return function () {
+                individualAudio.pause()
+                individualAudio.currentTime = 0
+                individualAudio.src = ("../sounds/" + file)
+                individualAudio.play()
             }
         }
 
