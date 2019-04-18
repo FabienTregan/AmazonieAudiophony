@@ -17,12 +17,12 @@
                 ]
             },
             "cigaleguyane": {
-                "img": "cicadanouragues.png",
-                "largeImg": "cicadanouraguespopup.png",
-                "miniImg": "cicadanouraguesmini.png",
+                "img": "quesada.png",
+                "largeImg": "quesadapopup.png",
+                "miniImg": "quesadamini.png",
                 "sound": "P1_S3V2_CigaleGuyane.wav",
-                "names": "Cigale",
-                "infos": "Non déterminée parmi la cinquantaine de cigales inventoriées en Guyane.",
+                "names": "Cigale locomotive<br><i>Quesada gigas</i>",
+                "infos": "Espèce très commune en Amérique Centrale et du Sud.",
                 "slots": [
                     13,
                     65
@@ -176,7 +176,7 @@
                 "img": "grillonpastille.png",
                 "largeImg": "grillonpastillepopup.png",
                 "miniImg": "grillonpastillemini.png",
-                "names": "Grillon de Guyane<br><i></i>",
+                "names": "Grillon de Guyane<br>",
                 "infos": "Genre <i>Paragryllus</i><br>Commence à chanter à la tombée de la nuit.",
                 "sound": "P5_S2_Grillon forgeron.wav",
                 "slots": [
