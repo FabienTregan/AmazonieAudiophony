@@ -6,10 +6,10 @@
         "sound": "P1_PaysageV2_2mn30.wav",
         "animals": {
             "cigalemontante": {
-                "img": "grillonpastille.png",
-                "largeImg": "grillonpastillepopup.png",
-                "miniImg": "grillonpastillemini.png",
-                "names": "Grillon<br><i>Lerneca fuscipennis<i>",
+                "img": "cicadanouragues.png",
+                "largeImg": "cicadanouraguespopup.png",
+                "miniImg": "cicadanouraguesmini.png",
+                "names": "Cigale<br>non identifiée",
                 "infos": "Enregistrement au carbet de Saint-Elie",
                 "sound": "P1_S1S2_CigaleMontante.wav",
                 "slots": [
