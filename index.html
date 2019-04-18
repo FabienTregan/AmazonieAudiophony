@@ -27,26 +27,6 @@
             width: 100%;
             cursor: pointer;
         }
-
-        #credits {
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1000;
-        }
-
-        #credits.shown {
-            display: block;
-        }
-
-        #credits img {
-            height: 100%;
-            width: 100%;
-        }
-
     </style>
 </head>
 
@@ -54,27 +34,6 @@
 
     <div id="main" class="wideScreen">
         <img src="index.png" onclick="window.location.href='./landscapes'" />
-
-        <div class="clickArea" style="left: 3.75%; bottom: 8.5%; width: 4.5%; height: 8%;" onclick="showCredits()"></div>
-        <div id="credits">
-            <img src="credits.png">
-            <div class="clickArea" style="left: 88.5%; bottom: 85%; width: 4.5%; height: 8%;" onclick="hideCredits()">
-            </div>
-        </div>
     </div>
-
-    <script>
-        function showCredits() {
-            var credits = document.getElementById("credits")
-            credits.classList.add("shown")
-        }
-
-        function hideCredits() {
-            var credits = document.getElementById("credits")
-            credits.classList.remove("shown")
-        }
-
-        autobackhome(".")
-    </script>
 
 </body>

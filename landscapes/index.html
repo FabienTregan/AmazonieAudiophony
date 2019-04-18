@@ -107,6 +107,34 @@
             outline: aqua;
             border: pink;
         }
+
+        #credits {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1000;
+        }
+
+        #credits.shown {
+            display: block;
+        }
+
+        #credits img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .creditsbutton {
+            position: absolute;
+            cursor: pointer;
+            left: 2.08%;
+            top: 84.6%;
+            width: 4.64%;
+            height: auto;
+        }
     </style>
 </head>
 
@@ -126,6 +154,13 @@
 
         <div class="rules">
             Choisissez un paysage
+        </div>
+
+        <img src="creditsbutton.png" class="creditsbutton" onclick="showCredits()">
+        <div id="credits">
+            <img src="credits.png">
+            <div class="clickArea" style="left: 88.5%; bottom: 85%; width: 4.5%; height: 8%;" onclick="hideCredits()">
+            </div>
         </div>
 
     </div>
@@ -170,5 +205,18 @@
         function preventDefault(e) {
             e.preventDefault()
         }
+
+        function showCredits() {
+            var credits = document.getElementById("credits")
+            credits.classList.add("shown")
+        }
+
+        function hideCredits() {
+            var credits = document.getElementById("credits")
+            credits.classList.remove("shown")
+        }
+
+        autobackhome("..")
+
     </script>
 </body>
