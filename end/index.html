@@ -176,7 +176,6 @@
             cursor: pointer;
             animation: bumping 0.75s ease-in-out infinite alternate;
         }
-
     </style>
 </head>
 
@@ -185,16 +184,15 @@
     <div id="main" class="wideScreen">
         <img class="background" src="../background.png" />
 
-        <div id="title">TITRE</div>
+        <div id="title"></div>
 
-        <div id="subtitle">sous-titre</div>
+        <div id="subtitle"></div>
 
         <img class="home" src="../home.png" onclick="window.location.href='..'">
 
-        <div id="text">et patati et patata et blablabli et blablabla et patati et patata et blablabli et blablabla et
-            patati et patata et blablabli et blablabla</div>
+        <div id="text"></div>
 
-        <img id="image" src="../images/paysage1.png">
+        <img id="image" src="../images/end-paysage5.png">
 
         <div id="slots"> </div>
 
@@ -233,6 +231,7 @@
             populateAudio(landscape.sound, function () { populateAnimals() })
             populateTitle(landscape)
             populateText(landscape)
+            populateImage(landscape)
         }
 
         function populateTitle(landscape) {
@@ -326,6 +325,11 @@
         function populateText(landscape) {
             var textNode = document.getElementById("text")
             textNode.innerHTML = "<p>Félicitation, vous avez reconnu et placé au bon endroit tous les cris d'animaux principaux de ce paysage sonore.</p><p>" + landscape.endText + "</p>"
+        }
+
+        function populateImage(landscape) {
+            var imageNode = document.getElementById("image")
+            imageNode.src = "../images/" + landscape.endImage
         }
 
         function getParameter(paramName) {

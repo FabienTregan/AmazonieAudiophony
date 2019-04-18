@@ -29,7 +29,8 @@
                 ]
             }
         },
-        "endText" : "Vous aurez peut-être entendu un autre oiseau. Il s’agit de la Coracine pourpre (<i>Querula purpurata</i>) qui chante au rythme d'une petite grenouille de forêt."
+        "endText": "Vous aurez peut-être entendu un autre oiseau. Il s’agit de la Coracine pourpre (<i>Querula purpurata</i>) qui chante au rythme d'une petite grenouille de forêt.",
+        "endImage": "end-coracine.png"
     },
     "paysage4": {
         "title": "PAYSAGE SONORE DE GUYANE",
@@ -85,7 +86,8 @@
                 ]
             }
         },
-        "endText" : ""
+        "endText": "",
+        "endImage": "end-paysage4.png"
     },
     "paysage2": {
         "title": "PAYSAGE SONORE DE GUYANE",
@@ -138,7 +140,8 @@
                 ]
             }
         },
-        "endText" : "En fond sonore, vous pouvez aussi entendre deux autres oiseaux : l'Alapi carillonneur (<i>Percnostola rufifrons</i>) et l’araçari vert (<i>Pteroglossus viridis</i>)."
+        "endText": "En fond sonore, vous pouvez aussi entendre deux autres oiseaux : l'Alapi carillonneur (<i>Percnostola rufifrons</i>) et l’araçari vert (<i>Pteroglossus viridis</i>).",
+        "endImage": "end-aracarivert.png"
     },
     "paysage5": {
         "title": "PAYSAGE SONORE DE GUYANE",
@@ -192,7 +195,8 @@
                 ]
             }
         },
-        "endText" : ""
+        "endText": "",
+        "endImage": "end-paysage4.png"
     },
     "paysage3": {
         "title": "PAYSAGE SONORE DE GUYANE",
@@ -237,6 +241,7 @@
                 ]
             }
         },
-        "endText" : "En fond sonore, vous pouvez aussi entendre deux autres oiseaux : Tyran pirate (<i>Legatus leucophaius</i>) et l’ortalide motmot (<i>Ortalis motmot.</i>)"
+        "endText": "En fond sonore, vous pouvez aussi entendre deux autres oiseaux : Tyran pirate (<i>Legatus leucophaius</i>) et l’ortalide motmot (<i>Ortalis motmot.</i>)",
+        "endImage": "end-ortalis.png"
     }
 }
