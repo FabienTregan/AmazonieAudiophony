@@ -149,15 +149,15 @@
         "img": "p5.png",
         "sound": "P5_Paysage_2mn.wav",
         "animals": {
-            "leptodactylus": {
-                "img": "leptodactylus.png",
-                "largeImg": "leptodactyluspopup.png",
-                "miniImg": "leptodactylusmini.png",
+            "rhodomystax": {
+                "img": "rhodomystax.png",
+                "largeImg": "rhodomystaxpopup.png",
+                "miniImg": "rhodomystaxmini.png",
                 "names": "Batracien<br><i>Leptodactylus rhodomystax</i>",
                 "infos": "Famille des Leptodactylidae<br>Taille : 60 mm",
-                "sound": "P5_S4_Leptodactylus knudseni_L mystaceus.wav",
+                "sound": "P5_S1_Batracien_Leptodactylus rhodomystax.wav",
                 "slots": [
-                    48
+                    5
                 ]
             },
             "singearaignee": {
@@ -180,7 +180,7 @@
                 "infos": "Genre <i>Paragryllus</i><br>Commence à chanter à la tombée de la nuit.",
                 "sound": "P5_S2_Grillon forgeron.wav",
                 "slots": [
-                    15
+                    19
                 ]
             },
             "trachycephalus": {
@@ -192,6 +192,17 @@
                 "sound": "P5_S3_Grenouille metronome.wav",
                 "slots": [
                     31
+                ]
+            },
+            "knudseni": {
+                "img": "knudseni.png",
+                "largeImg": "knudsenipopup.png",
+                "miniImg": "knudsenimini.png",
+                "names": "Batracien<br><i>Leptodactylus knudseni</i>",
+                "infos": "Famille des Leptodactylidae.",
+                "sound": "P5_S4_Leptodactylus knudseni_L mystaceus.wav",
+                "slots": [
+                    48
                 ]
             }
         },
