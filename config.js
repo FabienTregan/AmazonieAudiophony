@@ -4,5 +4,5 @@ var config = {
     hideMouse: false,
 
     // time in seconds before the screensaver appears. If 0, screensaver is disabled.
-    screensaverDelay : 240,
+    screensaverDelay : 0,
 }

@@ -22,10 +22,18 @@
             background-color: black;
         }
 
-        #main > img {
+        #main>img {
             height: 100%;
             width: 100%;
             cursor: pointer;
+        }
+
+        #fullscreenFrame {
+            position: absolute;
+            height: 0px;
+            width: 0px;
+            border: none;
+            padding: none;
         }
     </style>
 </head>
@@ -33,7 +41,8 @@
 <body oncontextmenu='event.preventDefault()'>
 
     <div id="main" class="wideScreen">
-        <img src="index.png" onclick="window.location.href='./landscapes'" />
+        <iframe id="fullscreenFrame" src="./landscapes"></iframe>
+        <img src="index.png" onclick="document.getElementById('fullscreenFrame').requestFullscreen()" />
     </div>
 
 </body>
