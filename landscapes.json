@@ -3,7 +3,7 @@
         "title": "PAYSAGE SONORE DE GUYANE",
         "subtitle": "Levé du jour pluvieux au carbet de Saint-Elie",
         "img": "p1.png",
-        "sound": "P1_PaysageV2_2mn30.wav",
+        "sound": "P1_PaysageV2_2mn30.mp3",
         "animals": {
             "cigalemontante": {
                 "img": "cicadanouragues.png",
@@ -11,7 +11,7 @@
                 "miniImg": "cicadanouraguesmini.png",
                 "names": "Cigale<br>non identifiée",
                 "infos": "Enregistrement au carbet de Saint-Elie",
-                "sound": "P1_S1S2_CigaleMontante.wav",
+                "sound": "P1_S1S2_CigaleMontante.mp3",
                 "slots": [
                     95
                 ]
@@ -20,7 +20,7 @@
                 "img": "quesada.png",
                 "largeImg": "quesadapopup.png",
                 "miniImg": "quesadamini.png",
-                "sound": "P1_S3V2_CigaleGuyane.wav",
+                "sound": "P1_S3V2_CigaleGuyane.mp3",
                 "names": "Cigale locomotive<br><i>Quesada gigas</i>",
                 "infos": "Espèce très commune en Amérique Centrale et du Sud.",
                 "slots": [
@@ -36,7 +36,7 @@
         "title": "PAYSAGE SONORE DE GUYANE",
         "subtitle": "De nuit, premières pluies en forêt après une longue saison sèche",
         "img": "p4.png",
-        "sound": "P4_Paysage_2mn7.wav",
+        "sound": "P4_Paysage_2mn7.mp3",
         "animals": {
             "singehurleur": {
                 "img": "singehurleur.png",
@@ -44,7 +44,7 @@
                 "miniImg": "singehurleurmini.png",
                 "names": "Singe hurleur<br><i>Alouatta macconelli</i>",
                 "infos": "Famille des Atelidae<br>Taille : 50 à 70 cm avec la queue</br>Poids : 15 kg",
-                "sound": "P4_S3_Singe hurleur_chant.wav",
+                "sound": "P4_S3_Singe hurleur_chant.mp3",
                 "slots": [
                     55
                 ]
@@ -55,7 +55,7 @@
                 "miniImg": "allobatesmini.png",
                 "names": "Batracien<br><i>Allobates femoralis</i>",
                 "infos": "Famille des Dendrobatidae<br>Taille mâle 28-33 mm, femelle 33-35 mm",
-                "sound": "P4_S4_Batracien_Epipedobates femoralis.wav",
+                "sound": "P4_S4_Batracien_Epipedobates femoralis.mp3",
                 "slots": [
                     102
                 ]
@@ -66,7 +66,7 @@
                 "miniImg": "hypsiboasmini.png",
                 "names": "Rainette pattes d’oie<br><i>Hypsiboas boans</i>",
                 "infos": "Famille des Hylidae<br>Taille : mâle 101-128 mm, femelle 91-123 mm",
-                "sound": "P4_S2_Rainette pattes doie.wav",
+                "sound": "P4_S2_Rainette pattes doie.mp3",
                 "slots": [
                     18,
                     37,
@@ -79,7 +79,7 @@
                 "miniImg": "leptodactylusmini.png",
                 "names": "Batracien<br><i>Leptodactylus pentadactylus</i>",
                 "infos": "Famille des Hylidae<br>Taille : mâle 177 mm, femelle 185 mm",
-                "sound": "P4_S1_Batracien_Leptodactylus pendactylus.wav",
+                "sound": "P4_S1_Batracien_Leptodactylus pendactylus.mp3",
                 "slots": [
                     7,
                     77
@@ -93,7 +93,7 @@
         "title": "PAYSAGE SONORE DE GUYANE",
         "subtitle": "Sous-bois de jour",
         "img": "p2.png",
-        "sound": "P2_Paysage_2mn49.wav",
+        "sound": "P2_Paysage_2mn49.mp3",
         "animals": {
             "araponga": {
                 "img": "araponga.png",
@@ -101,7 +101,7 @@
                 "miniImg": "arapongamini.png",
                 "names": "Araponga blanc<br><i>Procnias albus</i>",
                 "infos": "Famille des <i>Cotingidés</i><br>Taille : 28 cm<br>Poids : 219 g",
-                "sound": "P2_S1_Araponga blanc_Procnias albus.wav",
+                "sound": "P2_S1_Araponga blanc_Procnias albus.mp3",
                 "slots": [
                     39
                 ]
@@ -112,7 +112,7 @@
                 "miniImg": "lipaugusmini.png",
                 "names": "Piauhau hurleur<br>paypayo<br><i>Lipaugus vociferans</i>",
                 "infos": "Famille des <i>Cotingidés</i><br>Taille : 28 cm",
-                "sound": "P2_S2_LipaugusVociférant.wav",
+                "sound": "P2_S2_LipaugusVociférant.mp3",
                 "slots": [
                     78
                 ]
@@ -121,7 +121,7 @@
                 "img": "alapi.png",
                 "largeImg": "alapipopup.png",
                 "miniImg": "alapimini.png",
-                "sound": "P2_S3_OiseauAlapiDeBuffon.wav",
+                "sound": "P2_S3_OiseauAlapiDeBuffon.mp3",
                 "names": "Alapi de Buffon<br><i>Myrmeciza atrothorax</i>",
                 "infos": "Famille des Thamnophilidés<br>Taille : 14 cm<br>Poids : 14 à 18 g",
                 "slots": [
@@ -134,7 +134,7 @@
                 "miniImg": "manacusmini.png",
                 "names": "Manakin casse-noisette<br><i>Manacus manacus</i>",
                 "infos": "Famille des Pipridés<br>Taille : 11 cm<br>Poids : 16 à 18 g",
-                "sound": "P2_S4_Oiseau_Manacus_manacus.wav",
+                "sound": "P2_S4_Oiseau_Manacus_manacus.mp3",
                 "slots": [
                     7
                 ]
@@ -147,7 +147,7 @@
         "title": "PAYSAGE SONORE DE GUYANE",
         "subtitle": "Forêt de nuit",
         "img": "p5.png",
-        "sound": "P5_Paysage_2mn.wav",
+        "sound": "P5_Paysage_2mn.mp3",
         "animals": {
             "rhodomystax": {
                 "img": "rhodomystax.png",
@@ -155,7 +155,7 @@
                 "miniImg": "rhodomystaxmini.png",
                 "names": "Batracien<br><i>Leptodactylus rhodomystax</i>",
                 "infos": "Famille des Leptodactylidae<br>Taille : 60 mm",
-                "sound": "P5_S1_Batracien_Leptodactylus rhodomystax.wav",
+                "sound": "P5_S1_Batracien_Leptodactylus rhodomystax.mp3",
                 "slots": [
                     5
                 ]
@@ -166,7 +166,7 @@
                 "miniImg": "singearaigneemini.png",
                 "names": "Singe-araignée<br><i>Ateles paniscus</i>",
                 "infos": "Famille des Atelidae<br>Taille : 64 – 90 cm<br>Poids : 6,5 – 13,5 kg",
-                "sound": "P5_S5_Singe araignee.wav",
+                "sound": "P5_S5_Singe araignee.mp3",
                 "slots": [
                     71,
                     98
@@ -178,7 +178,7 @@
                 "miniImg": "grillonpastillemini.png",
                 "names": "Grillon de Guyane<br>",
                 "infos": "Genre <i>Paragryllus</i><br>Commence à chanter à la tombée de la nuit.",
-                "sound": "P5_S2_Grillon forgeron.wav",
+                "sound": "P5_S2_Grillon forgeron.mp3",
                 "slots": [
                     19
                 ]
@@ -189,7 +189,7 @@
                 "miniImg": "trachycephalusmini.png",
                 "names": "Grenouille metronome<br><i>Trachycephalus hadroceps</i>",
                 "infos": "Famille des Hylidae<br>Chante avec puissance depuis des cavités d'arbre<br>à plus de 30 m de hauteur. ",
-                "sound": "P5_S3_Grenouille metronome.wav",
+                "sound": "P5_S3_Grenouille metronome.mp3",
                 "slots": [
                     31
                 ]
@@ -200,7 +200,7 @@
                 "miniImg": "knudsenimini.png",
                 "names": "Batracien<br><i>Leptodactylus knudseni</i>",
                 "infos": "Famille des Leptodactylidae.",
-                "sound": "P5_S4_Leptodactylus knudseni_L mystaceus.wav",
+                "sound": "P5_S4_Leptodactylus knudseni_L mystaceus.mp3",
                 "slots": [
                     48
                 ]
@@ -213,13 +213,13 @@
         "title": "PAYSAGE SONORE DE GUYANE",
         "subtitle": "Sous-bois à la tombée du jour",
         "img": "p3.png",
-        "sound": "P3_Paysage_2mn50.wav",
+        "sound": "P3_Paysage_2mn50.mp3",
         "animals": {
             "tinamou": {
                 "img": "tinamou.png",
                 "largeImg": "tinamoupopup.png",
                 "miniImg": "tinamoumini.png",
-                "sound": "P3_S1_OiseauTinamou cendre.wav",
+                "sound": "P3_S1_OiseauTinamou cendre.mp3",
                 "names": "Tinamou cendré<br>Cinereous tinamou<br><i>Crypturellus cinereus</i>",
                 "infos": "Famille des Tinamidés<br>Taille : 32 cm<br>Poids : 435 g",
                 "slots": [
@@ -231,7 +231,7 @@
                 "img": "troglodyte.png",
                 "largeImg": "troglodytepopup.png",
                 "miniImg": "troglodytemini.png",
-                "sound": "P3_S2_OiseauTroglodyte musicien.wav",
+                "sound": "P3_S2_OiseauTroglodyte musicien.mp3",
                 "names": "Troglodyte musicien<br>Musician Wren<br><i>Cyphorhinus arada</i>",
                 "infos": "Famille des Troglodytidés<br>Taille : 12 cm<br>Poids : 18 à 24 g",
                 "slots": [
@@ -243,7 +243,7 @@
                 "img": "toucan.png",
                 "largeImg": "toucanpopup.png",
                 "miniImg": "toucanmini.png",
-                "sound": "P3_S3_Toucan_Ramphastos tucanus.wav",
+                "sound": "P3_S3_Toucan_Ramphastos tucanus.mp3",
                 "names": "Toucan à bec rouge<br><i>Ramphastos tucanus</i>",
                 "infos": "Famille des Ramphastidés<br>Taille : 58 cm<br>Poids : 515 à 700 g",
                 "slots": [

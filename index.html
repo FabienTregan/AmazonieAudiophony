@@ -40,9 +40,24 @@
 
 <body oncontextmenu='event.preventDefault()'>
 
+    <script>
+
+        function tryFullscreen(url) {
+
+            var iframe = document.getElementById('fullscreenFrame')
+
+            if (iframe.requestFullscreen) {
+                iframe.src = url
+                iframe.requestFullscreen()
+            } else {
+                document.location = url
+            }
+        }
+    </script>
+
     <div id="main" class="wideScreen">
-        <iframe id="fullscreenFrame" src="./landscapes"></iframe>
-        <img src="index.png" onclick="document.getElementById('fullscreenFrame').requestFullscreen()" />
+        <iframe id="fullscreenFrame"></iframe>
+        <img src="index.png" onclick="tryFullscreen('./landscapes')" />
     </div>
 
 </body>

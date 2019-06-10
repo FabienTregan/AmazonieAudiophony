@@ -299,10 +299,12 @@
 
         <div id="slots"> </div>
 
-        <div id="slider" ontouchend="endSlide()" onmousedown="startSlide(event)" ontouchstart="startSlide(event.touches[0])">
+        <div id="slider" ontouchend="endSlide()" onmousedown="startSlide(event)"
+            ontouchstart="startSlide(event.touches[0])">
             <img id="thumb" src="slider/thumb.png">
         </div>
-        <div id="glasspane" onmouseout="endSlide()" ontouchend="endSlide()"  onmouseup="endSlide()" onmousemove="slide(event)" ontouchmove="slide(event.touches[0])"></div>
+        <div id="glasspane" onmouseout="endSlide()" ontouchend="endSlide()" onmouseup="endSlide()"
+            onmousemove="slide(event)" ontouchmove="slide(event.touches[0])"></div>
 
         <div class="rules">Faites glisser les images dans le bon emplacement.</div>
 
@@ -314,7 +316,8 @@
 
         <div id="popups">
             <div class="popup fiche">
-                <div class="clickArea" style="left: 87%; top: 4%; width: 7.5%; height: 7.5%; " onclick="individualAudio.pause(); popup_hide();">
+                <div class="clickArea" style="left: 87%; top: 4%; width: 7.5%; height: 7.5%; "
+                    onclick="individualAudio.pause(); popup_hide();">
                 </div>
 
                 <div id="names"></div>
@@ -352,7 +355,7 @@
             const landscape = landscapes[landscapeId]
             animals = landscape.animals
 
-            populateAudio(landscape.sound, function () { populateAnimals() })
+            populateAudioThenAnimals(landscape.sound)
             populateTitle(landscape)
         }
 
@@ -464,10 +467,14 @@
 
         var individualAudio = new Audio()
         function play(file) {
-            
+
             return function () {
                 individualAudio.pause()
-                individualAudio.currentTime = 0
+
+                if (!isNaN(individualAudio.duration)) {
+                    individualAudio.currentTime = 0
+                }
+                
                 individualAudio.src = ("../sounds/" + file)
                 individualAudio.play()
             }
@@ -523,7 +530,7 @@
             dragDiv.style.width = width + "px"
             dragDiv.style.height = height + "px"
             while (dragDiv.firstChild) {
-                dragDiv.firstChild.remove()
+                dragDiv.removeChild(dragDiv.firstChild)
             }
             dragDiv.appendChild(img)
 
@@ -552,14 +559,16 @@
                     var next = document.getElementById("next")
 
                     next.classList.remove("disabled")
-                    next.addEventListener("click", function() {document.location.href  = "../end/?landscapeId=" + getParameter("landscapeId")})
+                    next.addEventListener("click", function () { document.location.href = "../end/?landscapeId=" + getParameter("landscapeId") })
                 }
             }
         }
 
-        function populateAudio(sound, then) {
+        function populateAudioThenAnimals(sound) {
             audio = new Audio()
-            audio.addEventListener("loadedmetadata", then)
+
+            console.log('adding listener')
+            audio.addEventListener("loadedmetadata", function (e) { console.log({ loaded: e }); populateAnimals() })
             audio.addEventListener("timeupdate", timeUpdated)
             audio.src = '../sounds/' + sound
         }
